@@ -2,24 +2,23 @@
 layout:     post
 title:      "Hello Jekyll"
 subtitle:   "于是我开始写自己的博客"
-date:       2016-06-03 20:40:00
-author:     "Hang"
-header-img: "img//2016-06-03/head-bg.jpg"
+date:       2016-06-15 15:06:00
+author:     "Jerin"
+header-img: "img//2016-06-15/head-bg.jpg"
 catalog: true
 tags:
     - 技术
 ---
 
-## 前言
+# 前言
 
-Hang 也有自己的 Blog 了。
-第一篇文章就用来记录 Blog 的搭建过程。
+Jerin 也有自己的 Blog 了。
+第一篇文章就用来记录 Blog 的搭建过程，正文很多复制了网上的内容。
 
 [跳过废话](#build) 
 
-如果不是手机摔坏我就不会惦记备忘录里面存的AWS账号密码，如果不是想到了AWS只用来做VPN实在有些浪费我就
-不会想着在上面搭个博客。结果呢，查着查着Wordpress不知怎么的就发现了Jekyll，简单了解之后便喜欢上了。
-于是乎 —— 基于好多偶然和巧合，很久以拥有自己网站的愿望就从这个 Blog 开始实现了。
+原本呢是想随便写写博客来记录一下最近做的事情，以后再用到就不需要百度，直接去自己的博客找就行，想着在玩微博那就用新浪博客吧。结果种种不好用，字体行距不能改，布局、背景不能按照自己喜欢的来，代码贴出来也不好看，感觉自己受到了很多限制。作为一个工科男怎么能被这种框架束缚呢，就想着自己搭个博客吧，反正实验室有服务器，搞个域名也方便。后来通过朋友的推荐了解了一下Wordpress和Jekyll，最后选择了后者。
+
 
 
 为什么选择用Jekyll，我是这么觉得的：
@@ -59,7 +58,7 @@ GitHub Pages 是 [GitHub](https://GitHub.com/)  推出的展示自我和项目�
 **2.安装 [RubyGems](https://rubygems.org/pages/download)**
 
 windows下使用zip格式较为方便，将下载的文件解压到任意路径下。打开windows的命令行窗口
-(按win+x+a)，输入命令：
+(win8以后可以按win+x+a)，输入命令：
 
 ```
 $ cd {你的解压地址}
@@ -78,7 +77,7 @@ $ gem install jekyll-paginate
 **4.配置 Git 环境**
 
 首先安装 [git for windows](https://git-for-windows.GitHub.io/)
-,完成以后，后续配置需要用到GitHub账号，在后文中介绍。
+全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。
 
 ### GitHub准备
 
@@ -220,7 +219,6 @@ $ git push origin master
 
 ## 后记
 
-希望自己能保持一颗纯粹的心，坚持把 Blog 更新下去。
 
 接下来打算要做的有：
 

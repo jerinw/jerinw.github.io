@@ -1,22 +1,22 @@
-# Site settings
-title: Hang's Blog
-SEOTitle: 詹航的博客 | Hang's Blog
+﻿# Site settings
+title: Jerin's Blog
+SEOTitle: 感月月的博客 | Jerin's Blog
 header-img: img/home-bg.jpg
-email: Zhanhangpro@gmail.com
-description: "关于前端与设计、黑客与画家 | 詹航，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Zhanhang詹航 的个人博客，与你一起发现更大的世界。"
-keyword: "詹航, Zhanhang詹航, Zhanhang, 鬼栈, Zhanhangpro, @Zhanhangpro, 詹航的博客, Zhanhang Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品"
-url: "http://zhanhang2014.github.io"              # your host, for absolute URL
+email: jerinw@zju.edu.cn
+description: "这里是 @Jerin 的个人博客，与你一起发现更大的世界。"
+keyword: "博客, 个人网站, 互联网, 前端, 设计, 产品"
+url: "http://jerinw.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
 # SNS settings
 RSS: false
-#weibo_username:     Zhanhang
-#zhihu_username:     Zhanhang
-#github_username:    Zhanhang
-#twitter_username:  Zhanhangpro
-#facebook_username:  Zhanhang
+weibo_username:     2327272352
+#zhihu_username:     Jerin
+github_username:    jerinw
+#twitter_username:  Jerin
+#facebook_username:  Jerin
 # linkedin_username:  firstname-lastname-idxxxx
 
 
@@ -69,14 +69,14 @@ kramdown:
 
 # Sidebar settings
 # Sidebar settings
-sidebar: false                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，做做设计，看看产品。世界那么大，我想去看看。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "脑子有病，时而优柔时而果断，时而浮躁时而镇静，从来感性未曾理性。"
+sidebar-avatar: /img/sidebar.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # Featured Tags
-featured-tags: false                     # whether or not using Feature-Tags
+featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 

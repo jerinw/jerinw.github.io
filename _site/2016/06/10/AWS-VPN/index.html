@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="关于前端与设计、黑客与画家 | 詹航，Web & Mobile Lover，Front-End Engineer，UX Designer | 这里是 @Zhanhang詹航 的个人博客，与你一起发现更大的世界。">
-    <meta name="keyword"  content="詹航, Zhanhang詹航, Zhanhang, 鬼栈, Zhanhangpro, @Zhanhangpro, 詹航的博客, Zhanhang Blog, 博客, 个人网站, 互联网, 前端, 设计, 产品">
+    <meta name="description" content="这里是 @Jerin 的个人博客，与你一起发现更大的世界。">
+    <meta name="keyword"  content="博客, 个人网站, 互联网, 前端, 设计, 产品">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>使用AWS搭建自己的VPN - 詹航的博客 | Hang's Blog</title>
+    <title>使用AWS搭建自己的VPN - 感月月的博客 | Jerin's Blog</title>
 
-    <link rel="canonical" href="http://zhanhang2014.github.io/2016/06/10/AWS-VPN/">
+    <link rel="canonical" href="http://jerinw.github.io/2016/06/10/AWS-VPN/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -62,7 +62,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Hang's Blog</a>
+            <a class="navbar-brand" href="/">Jerin's Blog</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -167,7 +167,7 @@
                     
                     <h2 class="subheading">论如何造一把称手的梯子</h2>
                     
-                    <span class="meta">Posted by Hang on June 10, 2016</span>
+                    <span class="meta">Posted by Jerin on June 10, 2016</span>
                 </div>
             </div>
         </div>
@@ -185,17 +185,17 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h2 id="section">前言</h2>
+				<h1 id="section">前言</h1>
 
 <p>这一篇博客记录关于自己搭建VPN的内容。<strong>但是</strong>，我并不想写太多细节方面的东西，<a href="#build">后文</a>列出了很详细的教程，之前我自己也是照着这些教程来做的。</p>
 
 <p>我想就写一写照着教程，踩着一些坑，最后好歹成功搭建起VPN这个过程，自己逐渐形成的“哦，这个原来大概就是这么个玩意儿”一般的认识。</p>
 
-<h2 id="section-1">原理</h2>
+<h1 id="section-1">原理</h1>
 
 <p>简单来说，我们之所以需要使用 VPN ，是因为我们需要加密数据来避免GFW的封锁。</p>
 
-<h4 id="gfw-">GFW 简单说明</h4>
+<h3 id="gfw-">GFW 简单说明</h3>
 
 <p>GFW 的封锁主要包括：</p>
 
@@ -209,7 +209,7 @@
 
 <p>而之所以其能够进行封锁，是因为网络协议的数据包头部是明文的，加密连接HTTPS的公钥也是明文的。如果在跨境传输过程中有某种加密手段，那么监视和封锁便无从谈起了。</p>
 
-<h4 id="vpn-">VPN 简单说明</h4>
+<h3 id="vpn-">VPN 简单说明</h3>
 
 <p>VPN(virtual private network) 能够将私有网络如局域网连接到公共网络或互联网上，用户可以通过连接到私有网络的设备访问公共网络或互联网<a href="https://en.wikipedia.org/wiki/Virtual_private_network">(wiki)</a>。</p>
 
@@ -217,7 +217,7 @@
 
 <p>也就是说, VPN 能够让你的设备远程连接到一台主机上，通过这台主机访问互联网，而你的设备和这台主机之间的数据传输是经过加密的。</p>
 
-<h2 id="section-2">实现</h2>
+<h1 id="section-2">实现</h1>
 
 <p>要实现 VPN 的搭建我们需要准备：</p>
 
@@ -231,7 +231,7 @@
 
 <p>那么下文就再继续讲这两方面的内容。</p>
 
-<h4 id="section-3">服务器</h4>
+<h3 id="section-3">服务器</h3>
 <p id="build"></p>
 
 <p>服务器方面，推荐亚马逊的<a href="https://aws.amazon.com/cn/">AWS</a>, 新用户可以免费使用一年。</p>
@@ -257,9 +257,9 @@
   <li>可以选择服务器实例区域，建议选东京，我现在用着很流畅，最开始选的美国延时很高</li>
 </ol>
 
-<h4 id="section-4">协议</h4>
+<h3 id="section-4">协议</h3>
 
-<h5 id="section-5">隧道技术</h5>
+<h3 id="section-5">隧道技术</h3>
 
 <p>隧道技术的基本过程是在源局域网与公网的接口处将数据(可以是ISO七层模型中的数据链路层或网络层数据)作为负载封装在一种可以在公网上传输的数据格式中，在目的局域网与公网的接口处将数据解封装，取出负载。被封装的数据包在互联网上传递时所经过的逻辑路径被称为“隧道”。</p>
 
@@ -279,7 +279,7 @@
 
 <p><a href="http://www.tuicool.com/articles/MjqE7fF">IPSec/IKEv2 VPN 架设教程</a></p>
 
-<h2 id="section-6">后记</h2>
+<h1 id="section-6">后记</h1>
 
 <p>搭梯子教程到这里就结束了。</p>
 
@@ -294,13 +294,6 @@
 
 
                 <ul class="pager">
-                    
-                    <li class="previous">
-                        <a href="/2016/06/04/Hello-Jekyll/" data-toggle="tooltip" data-placement="top" title="Hello Jekyll">
-                        Previous<br>
-                        <span>Hello Jekyll</span>
-                        </a>
-                    </li>
                     
                     
                 </ul>
@@ -336,6 +329,16 @@
                 sidebar-container">
 
                 <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+        			</div>
+                </section>
                 
 
                 <!-- Friends Blog -->
@@ -400,14 +403,32 @@
                     <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
                     
                     
+                    <li>
+                        <a target="_blank" href="http://weibo.com/2327272352">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
 
 
                     
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/jerinw">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                     
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Hang's Blog 2016
+                    Copyright &copy; Jerin's Blog 2016
                     <br>
                     Theme by Hux
                 </p>
