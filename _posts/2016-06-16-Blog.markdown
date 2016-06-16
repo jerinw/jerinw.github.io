@@ -1,10 +1,10 @@
 ---
 layout:     post
-title:      "Hello Jekyll"
-subtitle:   "于是我开始写自己的博客"
-date:       2016-06-15 15:06:00
+title:      "Blog on my own"
+subtitle:   "搭起了属于自己的博客"
+date:       2016-06-16 10:06:00
 author:     "Jerin"
-header-img: "img//2016-06-15/head-bg.jpg"
+header-img: "img/tag-bg.jpg"
 catalog: true
 tags:
     - 技术
@@ -12,22 +12,18 @@ tags:
 
 # 前言
 
-Jerin 也有自己的 Blog 了。
-第一篇文章就用来记录 Blog 的搭建过程，正文很多复制了网上的内容。
+如今我的小屋已经砌成，在此分享一下经验，正文中部分内容参考了网上其他教程。
 
 [跳过废话](#build) 
 
-原本呢是想随便写写博客来记录一下最近做的事情，以后再用到就不需要百度，直接去自己的博客找就行，想着在玩微博那就用新浪博客吧。结果种种不好用，字体行距不能改，布局、背景不能按照自己喜欢的来，代码贴出来也不好看，感觉自己受到了很多限制。作为一个工科男怎么能被这种框架束缚呢，就想着自己搭个博客吧，反正实验室有服务器，搞个域名也方便。后来通过朋友的推荐了解了一下Wordpress和Jekyll，最后选择了后者。
+说起来也是今年刚开始写的博客，打算记录一下自己最近做的事，或是记录学习工作上遇到的问题，如何解决的。开始选择了新浪博客，但用着用着发现了很多不喜欢的地方，比如布局背景不能随意更换，文章字体行距不能选择，代码不能高亮......作为一个工科生怎么能被这些束缚住手脚呢，那么就自己动手搭一个自己的博客吧，想怎么改就怎么改，想着反正实验室有好多世界各地的服务器，搞个域名也不难。一开始查资料有人推荐Wordpress，后来又了解了Jekyll,Hexo,最后确定用Jeckyll。
 
 
 
 为什么选择用Jekyll，我是这么觉得的：
 
 
-如果把个人网站比作自己的房间，那么自己建站便是从头开始盖房子，一砖一瓦都是属于你的，但也都需要你劳神费心；
-Blog 服务则是给你一间现成的房间，但是你只能把自己的东西放在指定的位置，房间里也会出现和你无关的物品和你并不期望的访客。
-
-Jekyll对我来说是一个很好的调和 —— 不必为技术的繁琐担心过多，而当你有心时又会给你足够的自由发挥空间。
+首先不是每个人都想去花钱买空间买域名的，Jekyll生成的网页可以托管在Github上。其次Jekyll简洁明了，Wordpress功能如此强大，以至于大家都是在不断折腾Wordpress本身，而不是专注于写博客。然后Jekyll技术门槛相对较低，Markdown写起来也比较顺手。其实它也有一定缺点，比如Jekyll生成的都是静态网页，如果要加评论的模块比较麻烦，其次它是不依托数据库的，也就是说每次运行都要遍历所有文本文件，要是网站做得越大，生成时间也就越长。但是瑕不掩瑜，总结来说，用Jekyll就是：免费，简洁，够用。
 
 
 <p id = "build"></p>
@@ -35,30 +31,28 @@ Jekyll对我来说是一个很好的调和 —— 不必为技术的繁琐担心
 
 ## 正文
 
-本博客使用 [Jekyll](http://jekyll.bootcss.com/) + [GitHub Pages](https://pages.GitHub.com/) 的技术方案搭建。
+本博客使用[Markdown](http://daringfireball.net/projects/markdown/) + [Jekyll](http://jekyll.bootcss.com/) + [GitHub Pages](https://pages.GitHub.com/) 的技术方案搭建。
 
-其中 Jekyll 是一个博客形态的静态站点产生器，能够将[Markdown](http://daringfireball.net/projects/markdown/)转换成可以发布的完整网站。使用 Jekyll 来进行本地网站的调试
-和 Blog 的发布。
+其中 Jekyll 是一个博客形态的静态站点产生器，能够将.Markdown转换成可以发布的完整网站。使用 Jekyll 来进行本地网站的调试然后用Git进行 Blog 的发布。
 
-GitHub Pages 是 [GitHub](https://GitHub.com/)  推出的展示自我和项目的网站。你的网站直接托管在自己的 GitHub 仓库上，默认使用GitHub的子域名，通过 Git 命令管理，不用自己捣腾主机，也没有流量和空间限制。
-是一个非常理想的展示的空间。
+[GitHub Pages](https://pages.github.com/) 是Github推出的展示自我和项目的网站。你的网站直接托管在自己的 GitHub 仓库上，默认使用GitHub的子域名，通过 Git 命令管理，不用自己捣腾主机，也没有流量和空间限制.是一个非常理想的展示的空间。
 
 ### 本地准备
 
-接下来要介绍本地的准备，主要以 windows 环境为例。
+接下来要介绍本地的准备，系统为Win7，文本编辑器用的Sublime text。
 
 **1.安装 [Ruby](http://rubyinstaller.org/downloads/)**
 
-![](http://img.blog.csdn.net/20160326174105835)
+注意64位和32位的区别，我装的是 Ruby 2.2.4(x64)
 
 **注意安装时一定要勾选添加到环境变量！**
 
-![](http://img.blog.csdn.net/20160326174117476)
+![](/img/2016-06-16/1.jpg)
 
 **2.安装 [RubyGems](https://rubygems.org/pages/download)**
 
-windows下使用zip格式较为方便，将下载的文件解压到任意路径下。打开windows的命令行窗口
-(win8以后可以按win+x+a)，输入命令：
+Windows下使用zip格式较为方便，将下载的文件解压到任意路径下。打开Windows的命令行窗口
+(Win8以后可以按win+x+a)，输入命令：
 
 ```
 $ cd {你的解压地址}
@@ -77,7 +71,7 @@ $ gem install jekyll-paginate
 **4.配置 Git 环境**
 
 首先安装 [git for windows](https://git-for-windows.GitHub.io/)
-全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。
+我装的是Git-2.9.0-64-bit。全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。
 
 ### GitHub准备
 
@@ -104,7 +98,8 @@ $ git config --global user.email "{name@site.com}"    // 用你的邮箱替换{n
 $ ssh-keygen -t rsa -C"{name@site.com}"    // 用你的邮箱替换{name@site.com}
 ```
 
-这样在```C:\Users\你的计算机用户名```下会生成一个```.ssh```文件夹。
+这样在```C:\Users\username```下会生成一个```.ssh```文件夹。我的路径是在C:\Program Files\Java\jdk1.8.0_51\.ssh，反正在命令行下有提示，如下图。
+![](/img/2016-06-16/2.jpg)
 
 接下来使用浏览器登录你的GitHub账户，点击右上角的"Settings"
 
@@ -222,14 +217,10 @@ $ git push origin master
 
 接下来打算要做的有：
 
-1. 第一点当然是多写一些内容啦；
+1. 多写一些博客，不只是技术的，还有日常；
 
 2. 添加一个评论系统；
 
 3. 完善 Blog 的翻页支持；
 
 4. 添加搜索功能；
-
-5. 添加数据可视化的支持。
-
-好的，第一篇 Blog 就写到这里啦。评论系统做好以后我会在评论里面更新完成进度。

@@ -10,9 +10,9 @@
     <meta name="keyword"  content="博客, 个人网站, 互联网, 前端, 设计, 产品">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>使用AWS搭建自己的VPN - 感月月的博客 | Jerin's Blog</title>
+    <title>Hello Jekyll - 感月月的博客 | Jerin's Blog</title>
 
-    <link rel="canonical" href="http://jerinw.github.io/2016/06/10/AWS-VPN/">
+    <link rel="canonical" href="http://jerinw.github.io/2016/06/15/Blog-on-my-own/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -140,13 +140,13 @@
 
     <!-- Image to hack wechat -->
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="/img//2016-06-03/head-bg.jpg" width="0" height="0"> -->
+<!-- <img src="/img//2016-06-15/head-bg.jpg" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
         position: relative;
-        background-image: url('/img//2016-06-03/head-bg.jpg')
+        background-image: url('/img//2016-06-15/head-bg.jpg')
     }
 
     
@@ -162,12 +162,12 @@
                         <a class="tag" href="/tags/#技术" title="技术">技术</a>
                         
                     </div>
-                    <h1>使用AWS搭建自己的VPN</h1>
+                    <h1>Hello Jekyll</h1>
                     
                     
-                    <h2 class="subheading">论如何造一把称手的梯子</h2>
+                    <h2 class="subheading">于是我开始写自己的博客</h2>
                     
-                    <span class="meta">Posted by Jerin on June 10, 2016</span>
+                    <span class="meta">Posted by Jerin on June 15, 2016</span>
                 </div>
             </div>
         </div>
@@ -187,105 +187,229 @@
 
 				<h1 id="section">前言</h1>
 
-<p>这一篇博客记录关于自己搭建VPN的内容。<strong>但是</strong>，我并不想写太多细节方面的东西，<a href="#build">后文</a>列出了很详细的教程，之前我自己也是照着这些教程来做的。</p>
+<p>Jerin 也有自己的 Blog 了。
+第一篇文章就用来记录 Blog 的搭建过程，正文很多复制了网上的内容。</p>
 
-<p>我想就写一写照着教程，踩着一些坑，最后好歹成功搭建起VPN这个过程，自己逐渐形成的“哦，这个原来大概就是这么个玩意儿”一般的认识。</p>
+<p><a href="#build">跳过废话</a></p>
 
-<h1 id="section-1">原理</h1>
+<p>原本呢是想随便写写博客来记录一下最近做的事情，以后再用到就不需要百度，直接去自己的博客找就行，想着在玩微博那就用新浪博客吧。结果种种不好用，字体行距不能改，布局、背景不能按照自己喜欢的来，代码贴出来也不好看，感觉自己受到了很多限制。作为一个工科男怎么能被这种框架束缚呢，就想着自己搭个博客吧，反正实验室有服务器，搞个域名也方便。后来通过朋友的推荐了解了一下Wordpress和Jekyll，最后选择了后者。</p>
 
-<p>简单来说，我们之所以需要使用 VPN ，是因为我们需要加密数据来避免GFW的封锁。</p>
+<p>为什么选择用Jekyll，我是这么觉得的：</p>
 
-<h3 id="gfw-">GFW 简单说明</h3>
+<p>如果把个人网站比作自己的房间，那么自己建站便是从头开始盖房子，一砖一瓦都是属于你的，但也都需要你劳神费心；
+Blog 服务则是给你一间现成的房间，但是你只能把自己的东西放在指定的位置，房间里也会出现和你无关的物品和你并不期望的访客。</p>
 
-<p>GFW 的封锁主要包括：</p>
+<p>Jekyll对我来说是一个很好的调和 —— 不必为技术的繁琐担心过多，而当你有心时又会给你足够的自由发挥空间。</p>
 
-<ol>
-  <li>关键字过滤</li>
-  <li>IP封锁</li>
-  <li>DNS污染、劫持</li>
-  <li>特定端口封锁</li>
-  <li>加密连接干扰</li>
-</ol>
-
-<p>而之所以其能够进行封锁，是因为网络协议的数据包头部是明文的，加密连接HTTPS的公钥也是明文的。如果在跨境传输过程中有某种加密手段，那么监视和封锁便无从谈起了。</p>
-
-<h3 id="vpn-">VPN 简单说明</h3>
-
-<p>VPN(virtual private network) 能够将私有网络如局域网连接到公共网络或互联网上，用户可以通过连接到私有网络的设备访问公共网络或互联网<a href="https://en.wikipedia.org/wiki/Virtual_private_network">(wiki)</a>。</p>
-
-<p><img src="/img/2016-06-10/vpn-mechanic.png" alt="" /></p>
-
-<p>也就是说, VPN 能够让你的设备远程连接到一台主机上，通过这台主机访问互联网，而你的设备和这台主机之间的数据传输是经过加密的。</p>
-
-<h1 id="section-2">实现</h1>
-
-<p>要实现 VPN 的搭建我们需要准备：</p>
-
-<blockquote>
-  <p>一台不受封锁的服务器</p>
-</blockquote>
-
-<blockquote>
-  <p>以及一种与这台服务器通信的、加密的数据传输协议</p>
-</blockquote>
-
-<p>那么下文就再继续讲这两方面的内容。</p>
-
-<h3 id="section-3">服务器</h3>
 <p id="build"></p>
+<hr />
 
-<p>服务器方面，推荐亚马逊的<a href="https://aws.amazon.com/cn/">AWS</a>, 新用户可以免费使用一年。</p>
+<h2 id="section-1">正文</h2>
 
-<p>申请教程在<a href="http://bbs.ngacn.cc/read.php?tid=7298878">这里</a>写得非常详细。</p>
+<p>本博客使用 <a href="http://jekyll.bootcss.com/">Jekyll</a> + <a href="https://pages.GitHub.com/">GitHub Pages</a> 的技术方案搭建。</p>
 
-<p>关于AWS有一些值得注意的地方：</p>
+<p>其中 Jekyll 是一个博客形态的静态站点产生器，能够将<a href="http://daringfireball.net/projects/markdown/">Markdown</a>转换成可以发布的完整网站。使用 Jekyll 来进行本地网站的调试
+和 Blog 的发布。</p>
+
+<p>GitHub Pages 是 <a href="https://GitHub.com/">GitHub</a>  推出的展示自我和项目的网站。你的网站直接托管在自己的 GitHub 仓库上，默认使用GitHub的子域名，通过 Git 命令管理，不用自己捣腾主机，也没有流量和空间限制。
+是一个非常理想的展示的空间。</p>
+
+<h3 id="section-2">本地准备</h3>
+
+<p>接下来要介绍本地的准备，主要以 windows 环境为例。</p>
+
+<p><strong>1.安装 <a href="http://rubyinstaller.org/downloads/">Ruby</a></strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160326174105835" alt="" /></p>
+
+<p><strong>注意安装时一定要勾选添加到环境变量！</strong></p>
+
+<p><img src="http://img.blog.csdn.net/20160326174117476" alt="" /></p>
+
+<p><strong>2.安装 <a href="https://rubygems.org/pages/download">RubyGems</a></strong></p>
+
+<p>windows下使用zip格式较为方便，将下载的文件解压到任意路径下。打开windows的命令行窗口
+(win8以后可以按win+x+a)，输入命令：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {你的解压地址}
+$ ruby setpu.rb
+</code></pre>
+</div>
+
+<p><strong>3.安装 Jekyll</strong></p>
+
+<p>在命令行输入：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install jekyll
+$ gem install jekyll-paginate
+</code></pre>
+</div>
+
+<p><strong>4.配置 Git 环境</strong></p>
+
+<p>首先安装 <a href="https://git-for-windows.GitHub.io/">git for windows</a>
+全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。</p>
+
+<h3 id="github">GitHub准备</h3>
+
+<p><strong>1.创建自己的 <a href="https://GitHub.com/">GitHub</a> 账号</strong></p>
+
+<p><strong>2.设置 git 账号</strong></p>
+
+<p>在本地打开安装好的 Git Bash。</p>
+
+<p><img src="http://img.blog.csdn.net/20160326173741565" alt="" /></p>
+
+<p>在<code class="highlighter-rouge">shell</code>中执行以下命令，设置你的 git 用户名和邮箱：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global user.name "{username}"          // 用你的用户名替换{username}
+$ git config --global user.email "{name@site.com}"    // 用你的邮箱替换{name@site.com}
+</code></pre>
+</div>
+
+<p><strong>3.配置SSH</strong></p>
+
+<p>为了和GitHub的远程仓库进行传输，需要配置SSH。在<code class="highlighter-rouge">shell</code>中执行：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ ssh-keygen -t rsa -C"{name@site.com}"    // 用你的邮箱替换{name@site.com}
+</code></pre>
+</div>
+
+<p>这样在<code class="highlighter-rouge">C:\Users\你的计算机用户名</code>下会生成一个<code class="highlighter-rouge">.ssh</code>文件夹。</p>
+
+<p>接下来使用浏览器登录你的GitHub账户，点击右上角的”Settings”</p>
+
+<p><img src="http://img.blog.csdn.net/20160326173806394" alt="" /></p>
+
+<p>点击“SSH Keys”，</p>
+
+<p><img src="http://img.blog.csdn.net/20160326173821144" alt="" /></p>
+
+<p>使用文本编辑器打开<code class="highlighter-rouge">.ssh</code>中的<code class="highlighter-rouge">id_rsa.pub</code>文件，将内容复制粘贴到Key中，
+点“Add SSH Key”确定。</p>
+
+<p><img src="http://img.blog.csdn.net/20160326173829850" alt="" /></p>
+
+<p>配置好SSH之后，便可以在本地使用 git 访问自己的 GitHub 远程仓库了。</p>
+
+<p><strong>4.创建自己的 GitHub Pages</strong></p>
+
+<p>GitHub 自动将命名规则为<code class="highlighter-rouge"><span class="p">{</span><span class="err">yourusername</span><span class="p">}</span><span class="err">.github.io</span></code>的仓库识别为 GitHub Pages 项目。简单的
+建站方法是挑选一个自己喜欢的<a href="https://github.com/jekyll/jekyll/wiki/sites">模板</a>, 将其Fork到
+自己的空间。例如：</p>
+
+<p><img src="http://img.blog.csdn.net/20160326173933085" alt="" /></p>
+
+<p>然后在你的主页点开之前Fork的仓库，点击”Settings”,将“Repository name”改为
+ <code class="highlighter-rouge"><span class="p">{</span><span class="err">yourusername</span><span class="p">}</span><span class="err">.github.io</span></code>，点击“Rename”。</p>
+
+<p><img src="http://img.blog.csdn.net/20160326173955662" alt="" /></p>
+
+<p>完成之后便可以通过<code class="highlighter-rouge">http://{yourusername}.github.io</code>来访问你Fork的网站啦。</p>
+
+<p><strong>5.同步仓库</strong></p>
+
+<p>为了方便网站的调试和 Blog 的编辑，我们需要将托管在 GitHub 上的仓库同步到本地计算机上。
+再次打开Git Bash，输入以下命令切换到你想放置本地代码仓库的位置：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {本地路径}     // 比如：cd e:/workspace
+</code></pre>
+</div>
+
+<p>clone（克隆）你自己的 GitHub Pages 远程仓库：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/{username}/{username}.github.io.git     
+</code></pre>
+</div>
+
+<p>结果如下：</p>
+
+<p><img src="http://img.blog.csdn.net/20160326174041711" alt="" /></p>
+
+<p>这时所有远程仓库里的源码都拷贝到 <code class="highlighter-rouge">e:/workspace/{username}.github.io</code> 这个文件夹里来了。</p>
+
+<h3 id="section-3">正式使用</h3>
+
+<p>有了前面的准备，现在就可以正式的编辑网站和写 Blog 啦。</p>
+
+<p><strong>1.Jekyll简单使用</strong></p>
+
+<p>在终端中输入命令:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {local repository} // {local repository}替换成你的本地仓库的目录
+$ jekyll serve
+</code></pre>
+</div>
+
+<p>如果一切顺利，通过浏览器访问 http://localhost:4000/ 就已经可以看到自己的网站啦。</p>
+
+<p>注意</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ jekyll serve
+</code></pre>
+</div>
+
+<p>与</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ jekyll serve -watch
+</code></pre>
+</div>
+
+<p>功能相似，开启服务后都可以查看网站效果，也能检测到修改。个人感觉差别在于被动刷新和主动
+检测上。而Jekyll配置文件_config.yml的改动则需要重启服务才能生效。</p>
+
+<p>所有的 Blog 放在仓库的 <code class="highlighter-rouge">_POST</code> 文件夹下，命名遵循 <code class="highlighter-rouge">y-m-d-title.format</code> 的格式。</p>
+
+<p>对 Jekyll <a href="http://jekyll.bootcss.com/docs/usage/">基本用法</a>和
+<a href="http://jekyll.bootcss.com/docs/usage/">目录结构</a>的更多介绍，需要的时候可以自己查看。</p>
+
+<p><strong>2.使用 Git 更新 Blog</strong></p>
+
+<p>无论是修改网站还是更新 Blog ，都可以通过 Git 命令来完成。打开 Git Bash 切换地址到本地仓库：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {your repository}
+</code></pre>
+</div>
+
+<p>如果之前使用 Git 与其他远程仓库建立过连接，则需要断开旧的连接连接到我们的 GitHub Pages 仓库：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git remote rm origin
+$ git remote add origin https://github.com/{yourusername}/{yourusername}.github.io.git
+</code></pre>
+</div>
+
+<p>然后在 Bash 中输入一下命令将本地修改同步到GitHub上:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ git add .
+$ git commit -m "statement"   //此处statement填写此次提交修改的内容，作为日后查阅
+$ git push origin master
+</code></pre>
+</div>
+<p>完成后就能在你的主页上看到更新了。</p>
+
+<h2 id="section-4">后记</h2>
+
+<p>接下来打算要做的有：</p>
 
 <ol>
-  <li>免费申请的服务器是有适用范围的，超出部分需要付费，务必谨慎操作；</li>
   <li>
-    <p>避免额外开销的TIPS:</p>
-
-    <blockquote>
-      <ol>
-        <li>在网上购买虚拟信用卡用于认证，这样即使产生了费用也不会扣到你的钱</li>
-        <li>注意同时只运行一个实例，保证时间不超过上限</li>
-        <li>不用的实例记得及时关闭，解除绑定的IP及时删除(我因为这个扣了几美分)</li>
-        <li>时常登录控制台查看自己的账单</li>
-      </ol>
-    </blockquote>
+    <p>第一点当然是多写一些内容啦；</p>
   </li>
-  <li>可以选择服务器实例区域，建议选东京，我现在用着很流畅，最开始选的美国延时很高</li>
+  <li>
+    <p>添加一个评论系统；</p>
+  </li>
+  <li>
+    <p>完善 Blog 的翻页支持；</p>
+  </li>
+  <li>
+    <p>添加搜索功能；</p>
+  </li>
+  <li>
+    <p>添加数据可视化的支持。</p>
+  </li>
 </ol>
 
-<h3 id="section-4">协议</h3>
-
-<h3 id="section-5">隧道技术</h3>
-
-<p>隧道技术的基本过程是在源局域网与公网的接口处将数据(可以是ISO七层模型中的数据链路层或网络层数据)作为负载封装在一种可以在公网上传输的数据格式中，在目的局域网与公网的接口处将数据解封装，取出负载。被封装的数据包在互联网上传递时所经过的逻辑路径被称为“隧道”。</p>
-
-<p><img src="/img/2016-06-10/vpn-protocal.jpg" alt="" /></p>
-
-<p>目前VPN隧道协议主要有4种：点到点隧道协议PPTP、第二层隧道协议L2TP、网络层隧道协议IPSec以及SOCKS v5。各种协议的特点有兴趣可以自己了解一下。</p>
-
-<p>比如，打开ios的新建 VPN 选项，可以看到这样的内容：</p>
-
-<p><img src="/img/2016-06-10/vpn-options.jpg" alt="" /></p>
-
-<p>其中这个 IKEv2 是一个新版的安全协议，应该是今后发展的趋势。我现在使用的是 PPTP 协议，<a href="#build">上面</a>教程中也有详细介绍。PPTP协议比较简单，容易被识别，比如如果我使用校园网就连不上。感觉ios里 VPN 协议是按照推荐顺序排列的。最为稳定的应该是 IKEv2 吧。而且现在 Ubuntu 上能够直接使用 apt-get 安装了，后面我也可以考虑换成 IKEv2 吧。</p>
-
-<p>最后再给两个教程：</p>
-
-<p><a href="http://blog.csdn.net/simonjay2007/article/details/7563933">L2TP/IPSec VPN 架设教程</a></p>
-
-<p><a href="http://www.tuicool.com/articles/MjqE7fF">IPSec/IKEv2 VPN 架设教程</a></p>
-
-<h1 id="section-6">后记</h1>
-
-<p>搭梯子教程到这里就结束了。</p>
-
-<p>当然 AWS 的用处远不止搭建 VPN 这么一点儿。以后有时间再慢慢发掘吧。</p>
-
-<p>对了我最喜欢在Ins上关注的插画家们，有空时刷一刷，很多作品都超级耐看。</p>
+<p>好的，第一篇 Blog 就写到这里啦。评论系统做好以后我会在评论里面更新完成进度。</p>
 
 
                 <hr>
@@ -295,13 +419,13 @@
 
                 <ul class="pager">
                     
-                    
-                    <li class="next">
-                        <a href="/2016/06/15/Hello-Jekyll/" data-toggle="tooltip" data-placement="top" title="Hello Jekyll">
-                        Next<br>
-                        <span>Hello Jekyll</span>
+                    <li class="previous">
+                        <a href="/2016/06/10/AWS-VPN/" data-toggle="tooltip" data-placement="top" title="使用AWS搭建自己的VPN">
+                        Previous<br>
+                        <span>使用AWS搭建自己的VPN</span>
                         </a>
                     </li>
+                    
                     
                 </ul>
 
