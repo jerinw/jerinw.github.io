@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      "Blog on my own"
-subtitle:   "搭起了属于自己的博客"
-date:       2016-06-16 10:06:00
+subtitle:   "是时候自由发挥了"
+date:       2016-06-15 14:00:00
 author:     "Jerin"
 header-img: "img/tag-bg.jpg"
 catalog: true
@@ -23,7 +23,7 @@ tags:
 为什么选择用Jekyll，我是这么觉得的：
 
 
-首先不是每个人都想去花钱买空间买域名的，Jekyll生成的网页可以托管在Github上。其次Jekyll简洁明了，Wordpress功能如此强大，以至于大家都是在不断折腾Wordpress本身，而不是专注于写博客。然后Jekyll技术门槛相对较低，Markdown写起来也比较顺手。其实它也有一定缺点，比如Jekyll生成的都是静态网页，如果要加评论的模块比较麻烦，其次它是不依托数据库的，也就是说每次运行都要遍历所有文本文件，要是网站做得越大，生成时间也就越长。但是瑕不掩瑜，总结来说，用Jekyll就是：免费，简洁，够用。
+首先不是每个人都想去花钱买空间买域名的，Jekyll生成的网页可以托管在Github上。其次Jekyll简洁明了，Wordpress功能如此强大，以至于大家都是在不断折腾Wordpress本身，而不是专注于写博客。然后Jekyll技术门槛相对较低，Markdown写起来也比较顺手。其实它也有一定缺点，比如Jekyll生成的都是静态网页，如果要加评论的模块比较麻烦，其次它是不依托数据库的，也就是说每次运行都要遍历所有文本文件，要是网站做得越大，生成时间也就越长。但是瑕不掩瑜，而且Jekyll是Proudly hosted by Github的（微笑）总结来说，用Jekyll就是：免费，简洁，够用。
 
 
 <p id = "build"></p>
@@ -47,7 +47,7 @@ tags:
 
 **注意安装时一定要勾选添加到环境变量！**
 
-![](/img/2016-06-16/1.jpg)
+![](/img/2016-06-15/1.jpg)
 
 **2.安装 [RubyGems](https://rubygems.org/pages/download)**
 
@@ -99,15 +99,15 @@ $ ssh-keygen -t rsa -C"{name@site.com}"    // 用你的邮箱替换{name@site.co
 ```
 
 这样在```C:\Users\username```下会生成一个```.ssh```文件夹。我的路径是在C:\Program Files\Java\jdk1.8.0_51\.ssh，反正在命令行下有提示，如下图。
-![](/img/2016-06-16/2.jpg)
+![](/img/2016-06-15/2.jpg)
 
 接下来使用浏览器登录你的GitHub账户，点击右上角的"Settings"
 
-![](http://img.blog.csdn.net/20160326173806394)
+![](/img/2016-06-15/3.jpg)
 
-点击“SSH Keys”，
+点击“SSH and GPG Keys”，
 
-![](http://img.blog.csdn.net/20160326173821144)
+![](/img/2016-06-15/4.jpg)
 
 使用文本编辑器打开```.ssh```中的```id_rsa.pub```文件，将内容复制粘贴到Key中，
 点“Add SSH Key”确定。
@@ -224,3 +224,5 @@ $ git push origin master
 3. 完善 Blog 的翻页支持；
 
 4. 添加搜索功能；
+
+5. 添加转发功能。
