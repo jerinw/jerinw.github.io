@@ -1,4 +1,4 @@
-﻿# Site settings
+# Site settings
 title: Jerin's Blog
 SEOTitle: 感月月的博客 | Jerin's Blog
 header-img: img/home-bg.jpg
@@ -14,7 +14,7 @@ baseurl: ""                             # for example, '/blog' if your blog host
 RSS: false
 weibo_username:     2327272352
 #zhihu_username:     Jerin
-github_username:    jerinw
+#github_username:    jerinw
 #twitter_username:  Jerin
 #facebook_username:  Jerin
 # linkedin_username:  firstname-lastname-idxxxx

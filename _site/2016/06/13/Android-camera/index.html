@@ -10,9 +10,9 @@
     <meta name="keyword"  content="博客, 个人网站, 互联网, 前端, 设计, 产品">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Blog on my own - 感月月的博客 | Jerin's Blog</title>
+    <title>Android Camera - 感月月的博客 | Jerin's Blog</title>
 
-    <link rel="canonical" href="http://jerinw.github.io/2016/06/15/Blog-on-my-own/">
+    <link rel="canonical" href="http://jerinw.github.io/2016/06/13/Android-camera/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -162,12 +162,12 @@
                         <a class="tag" href="/tags/#技术" title="技术">技术</a>
                         
                     </div>
-                    <h1>Blog on my own</h1>
+                    <h1>Android Camera</h1>
                     
                     
-                    <h2 class="subheading">是时候自由发挥了</h2>
+                    <h2 class="subheading">安卓调用本地摄像头并自动对焦拍照</h2>
                     
-                    <span class="meta">Posted by Jerin on June 15, 2016</span>
+                    <span class="meta">Posted by Jerin on June 13, 2016</span>
                 </div>
             </div>
         </div>
@@ -187,222 +187,249 @@
 
 				<h1 id="section">前言</h1>
 
-<p>如今我的小屋已经砌成，在此分享一下经验，正文中部分内容参考了网上其他教程。</p>
+<p>最近在做安卓程序开发，一个车牌识别的项目，其实车牌识别已经挺成熟了，只是：</p>
 
-<p><a href="#build">跳过废话</a></p>
+<p>1.安卓平台的识别比较少</p>
 
-<p>说起来也是今年刚开始写的博客，打算记录一下自己最近做的事，或是记录学习工作上遇到的问题，如何解决的。开始选择了新浪博客，但用着用着发现了很多不喜欢的地方，比如布局背景不能随意更换，文章字体行距不能选择，代码不能高亮……作为一个工科生怎么能被这些束缚住手脚呢，那么就自己动手搭一个自己的博客吧，想怎么改就怎么改，想着反正实验室有好多世界各地的服务器，搞个域名也不难。一开始查资料有人推荐Wordpress，后来又了解了Jekyll,Hexo,最后确定用Jeckyll。</p>
+<p>2.对中文的支持不太好​​​</p>
 
-<p>为什么选择用Jekyll，我是这么觉得的：</p>
+<p>​之前试过两个开源的识别项目，一个是国外的Openalpr，看起来做得很好的样子，适用的平台也很多，虽然从字符上看还是支持中文的，但是实际检测的时候从来测不出中文。一个是国内的easypr，号称有95%的识别率，试了一下发现识别率应该没有这么高，但是还可以吧，起码支持中文，是cpp写的。</p>
 
-<p>首先不是每个人都想去花钱买空间买域名的，Jekyll生成的网页可以托管在Github上。其次Jekyll简洁明了，Wordpress功能如此强大，以至于大家都是在不断折腾Wordpress本身，而不是专注于写博客。然后Jekyll技术门槛相对较低，Markdown写起来也比较顺手。其实它也有一定缺点，比如Jekyll生成的都是静态网页，如果要加评论的模块比较麻烦，其次它是不依托数据库的，也就是说每次运行都要遍历所有文本文件，要是网站做得越大，生成时间也就越长。但是瑕不掩瑜，而且Jekyll是Proudly hosted by Github的（微笑）总结来说，用Jekyll就是：免费，简洁，够用。</p>
+<p>于是就打算​把easypr移植到安卓上，Github上有现成版本可以参考，但是只能识别本地一张固定名称的照片，特别傻，于是就打算调用一下摄像头，直接手机上点一下识别了。</p>
 
-<p id="build"></p>
+<p>核心的识别部分还是用的CPP的源码​​，NDK的配置什么就不讲了。</p>
+
 <hr />
 
 <h2 id="section-1">正文</h2>
 
-<p>本博客使用<a href="http://daringfireball.net/projects/markdown/">Markdown</a> + <a href="http://jekyll.bootcss.com/">Jekyll</a> + <a href="https://pages.GitHub.com/">GitHub Pages</a> 的技术方案搭建。</p>
+<p>​### A.权限</p>
 
-<p>其中 Jekyll 是一个博客形态的静态站点产生器，能够将.Markdown转换成可以发布的完整网站。使用 Jekyll 来进行本地网站的调试然后用Git进行 Blog 的发布。</p>
+<p>首先在manifest.xml里加入摄像头权限和读写SD卡权限</p>
 
-<p><a href="https://pages.github.com/">GitHub Pages</a> 是Github推出的展示自我和项目的网站。你的网站直接托管在自己的 GitHub 仓库上，默认使用GitHub的子域名，通过 Git 命令管理，不用自己捣腾主机，也没有流量和空间限制.是一个非常理想的展示的空间。</p>
-
-<h3 id="section-2">本地准备</h3>
-
-<p>接下来要介绍本地的准备，系统为Win7，文本编辑器用的Sublime text。</p>
-
-<p><strong>1.安装 <a href="http://rubyinstaller.org/downloads/">Ruby</a></strong></p>
-
-<p>注意64位和32位的区别，我装的是 Ruby 2.2.4(x64)</p>
-
-<p><strong>注意安装时一定要勾选添加到环境变量！</strong></p>
-
-<p><img src="/img/2016-06-15/1.jpg" alt="" /></p>
-
-<p><strong>2.安装 <a href="https://rubygems.org/pages/download">RubyGems</a></strong></p>
-
-<p>Windows下使用zip格式较为方便，将下载的文件解压到任意路径下。打开Windows的命令行窗口
-(Win8以后可以按win+x+a)，输入命令：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {你的解压地址}
-$ ruby setpu.rb
+<div class="highlighter-rouge"><pre class="highlight"><code>    &lt;uses-permission android:name="android.permission.CAMERA"/&gt;
+    &lt;uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/&gt;
+    &lt;uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/&gt; 
 </code></pre>
 </div>
 
-<p><strong>3.安装 Jekyll</strong></p>
+<h3 id="b">B.加入控件</h3>
 
-<p>在命令行输入：</p>
+<p>layout的xml文件里加surfaceview，摄像头捕获的内容就显示在这个控件里。fill_parent表示控件有多大内容就有多大，比如这个activity里没有别的控件了，那这个摄像头捕获的图像就满屏幕，跟照相机一样，如果有别的控件，就填满除这个控件外剩下的空间。</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ gem install jekyll
-$ gem install jekyll-paginate
+<div class="highlighter-rouge"><pre class="highlight"><code>	&lt;SurfaceView
+	    android:id="@+id/surfaceview"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" /&gt;
 </code></pre>
 </div>
 
-<p><strong>4.配置 Git 环境</strong></p>
+<p><img src="/img/2016-06-13/2.jpg" alt="" /></p>
 
-<p>首先安装 <a href="https://git-for-windows.GitHub.io/">git for windows</a>
-我装的是Git-2.9.0-64-bit。全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。</p>
+<h3 id="c">C.懒得写了，贴源码</h3>
 
-<h3 id="github">GitHub准备</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code>package com.example.carplate;
 
-<p><strong>1.创建自己的 <a href="https://GitHub.com/">GitHub</a> 账号</strong></p>
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 
-<p><strong>2.设置 git 账号</strong></p>
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Mat;
+import org.opencv.highgui.Highgui;
 
-<p>在本地打开安装好的 Git Bash。</p>
+import android.os.Bundle;
+import android.os.Environment;
+import android.app.Activity;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.hardware.Camera;
+import android.hardware.Camera.PictureCallback;
+import android.view.MotionEvent;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-<p><img src="http://img.blog.csdn.net/20160326173741565" alt="" /></p>
+public class MainActivity extends Activity implements SurfaceHolder.Callback, Camera.PictureCallback {
+	private ImageView imageView = null;
+	private Bitmap bmp = null;
+	private TextView m_text = null;
+	private String path = null;
+	
+	private static Context context = null;  
+	private SurfaceView surfaceview;  
+	private SurfaceHolder surfaceholder;  
+	private Camera camera = null;
+	private boolean af;
+	
+	static {
+	    if (!OpenCVLoader.initDebug()) {
+	    } else {
+	        System.loadLibrary("imageproc");
+	    }
+	}
+	
 
-<p>在<code class="highlighter-rouge">shell</code>中执行以下命令，设置你的 git 用户名和邮箱：</p>
+//	protected void onCreate(Bundle savedInstanceState) {
+//		super.onCreate(savedInstanceState);
+//		setContentView(R.layout.activity_main);
+//		imageView = (ImageView) findViewById(R.id.image_view);
+//		m_text = (TextView) findViewById(R.id.myshow);
+//		bmp = BitmapFactory.decodeResource(getResources(), R.drawable.plate_locate);
+//		imageView.setImageBitmap(bmp);
+//		path = Environment.getExternalStorageDirectory().getAbsolutePath(); 
+//	}
+	@Override  
+    protected void onCreate(Bundle savedInstanceState) {  
+        super.onCreate(savedInstanceState);  
+        setContentView(R.layout.activity_main);  
+        context = this;  
+        
+        m_text = (TextView) findViewById(R.id.myshow);  
+        surfaceview = (SurfaceView)findViewById(R.id.surfaceview);  
+        surfaceholder = surfaceview.getHolder();  
+        surfaceholder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);  
+        surfaceholder.addCallback(MainActivity.this);  //这里的safeactivity改成了mainactivity
+        path = Environment.getExternalStorageDirectory().getAbsolutePath();
+        //path新加，为了后来拍完照片存到识别的目录
+        
+    }  
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git config --global user.name "{username}"          // 用你的用户名替换{username}
-$ git config --global user.email "{name@site.com}"    // 用你的邮箱替换{name@site.com}
+	private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
+		@Override
+		public void onManagerConnected(int status) {
+			switch (status) {
+			case LoaderCallbackInterface.SUCCESS: {
+			}
+				break;
+			default: {
+				super.onManagerConnected(status);
+			}
+				break;
+			}
+		}
+	};
+	
+/**
+ *识别的模块，点下那个识别的button以后要根据这两个训练好的svm.xml和ann.xml识别这张plate_locate.jpg。其中path为SD卡根目录
+ */
+	public void click(View view) throws UnsupportedEncodingException {
+		System.out.println("entering the jni");
+		String svmpath = path+"/svm.xml";
+		String annpath = path+"/ann.xml";
+		String imgpath = path+"/plate_locate.jpg";
+		byte[] resultByte = CarPlateDetection.ImageProc(imgpath,svmpath,annpath);
+		String result = new String(resultByte,"GBK");
+		System.out.println(result);
+		m_text.setText(result);
+	}
+
+	@Override
+	protected void onResume() {
+		super.onResume();
+		mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+	}
+	
+/**
+ *摄像头捕获图像预览的模块  
+ */
+	@Override  
+	public void surfaceChanged(SurfaceHolder arg0, int arg1, int arg2, int arg3) {  
+	    System.out.println("surfacechanged");  
+	}  
+	@Override  
+	public void surfaceCreated(SurfaceHolder holder) {  
+	    System.out.println("surfacecreated");  
+	    //获取camera对象  
+	    camera = Camera.open();  
+	    try {  
+	        //设置预览监听  
+	        camera.setPreviewDisplay(holder);  
+	        Camera.Parameters parameters = camera.getParameters();  
+	          
+	        if (this.getResources().getConfiguration().orientation   
+	                    != Configuration.ORIENTATION_LANDSCAPE) {  
+	            parameters.set("orientation", "portrait");  
+	            camera.setDisplayOrientation(90);  
+	            parameters.setRotation(90);  
+	        } else {  
+	            parameters.set("orientation", "landscape");  
+	            camera.setDisplayOrientation(0);  
+	            parameters.setRotation(0);  
+	        }  
+	        camera.setParameters(parameters);  
+	        //启动摄像头预览  
+	        camera.startPreview();  
+	        System.out.println("camera.startpreview");  
+	          
+	    } catch (IOException e) {  
+	        e.printStackTrace();  
+	        camera.release();  
+	        System.out.println("camera.release");  
+	    }  
+	}  
+	@Override  
+	public void surfaceDestroyed(SurfaceHolder arg0) {  
+	    System.out.println("surfaceDestroyed");  
+	    if (camera != null) {  
+	        camera.stopPreview();  
+	        camera.release();
+	        camera =null;
+	    }  
+	}  
+	
+/**
+ * 拍照的模块，点击屏幕自动对焦，松开手指时拍照，并保存在SD卡根目录
+ */
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {//屏幕触摸事件
+    	if (event.getAction() == MotionEvent.ACTION_DOWN) {//按下时自动对焦
+            camera.autoFocus(null);
+            af =true;
+        }
+        if (event.getAction() == MotionEvent.ACTION_UP &amp; af ==true) {//放开后拍照
+            camera.takePicture(null, null,this);
+            af =false;
+        }
+        return true;
+    }
+ 
+    public void onPictureTaken(byte[] data, Camera camera) {//拍摄完成后保存照片
+    	try {
+            String picpath = path +"/plate_locate.jpg";
+            data2file(data, picpath);
+        } catch (Exception e) {
+        }
+        camera.startPreview();
+    }
+ 
+    private void data2file(byte[] w, String fileName) throws Exception {//将二进制数据转换为文件的函数
+        FileOutputStream out =null;
+        try {
+            out =new FileOutputStream(fileName);
+            out.write(w);
+            out.close();
+        } catch (Exception e) {
+            if (out !=null)
+                out.close();
+            throw e;
+        }
+    }
+ 
+
+}
 </code></pre>
 </div>
 
-<p><strong>3.配置SSH</strong></p>
+<h2 id="section-2">后记</h2>
 
-<p>为了和GitHub的远程仓库进行传输，需要配置SSH。在<code class="highlighter-rouge">shell</code>中执行：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ ssh-keygen -t rsa -C"{name@site.com}"    // 用你的邮箱替换{name@site.com}
-</code></pre>
-</div>
-
-<p>这样在<code class="highlighter-rouge">C:\Users\username</code>下会生成一个<code class="highlighter-rouge">.ssh</code>文件夹。我的路径是在C:\Program Files\Java\jdk1.8.0_51.ssh，反正在命令行下有提示，如下图。
-<img src="/img/2016-06-15/2.jpg" alt="" /></p>
-
-<p>接下来使用浏览器登录你的GitHub账户，点击右上角的”Settings”</p>
-
-<p><img src="/img/2016-06-15/3.jpg" alt="" /></p>
-
-<p>点击“SSH and GPG Keys”，</p>
-
-<p><img src="/img/2016-06-15/4.jpg" alt="" /></p>
-
-<p>使用文本编辑器打开<code class="highlighter-rouge">.ssh</code>中的<code class="highlighter-rouge">id_rsa.pub</code>文件，将内容复制粘贴到Key中，
-点“Add SSH Key”确定。</p>
-
-<p><img src="http://img.blog.csdn.net/20160326173829850" alt="" /></p>
-
-<p>配置好SSH之后，便可以在本地使用 git 访问自己的 GitHub 远程仓库了。</p>
-
-<p><strong>4.创建自己的 GitHub Pages</strong></p>
-
-<p>GitHub 自动将命名规则为<code class="highlighter-rouge"><span class="p">{</span><span class="err">yourusername</span><span class="p">}</span><span class="err">.github.io</span></code>的仓库识别为 GitHub Pages 项目。简单的
-建站方法是挑选一个自己喜欢的<a href="https://github.com/jekyll/jekyll/wiki/sites">模板</a>, 将其Fork到
-自己的空间。例如：</p>
-
-<p><img src="http://img.blog.csdn.net/20160326173933085" alt="" /></p>
-
-<p>然后在你的主页点开之前Fork的仓库，点击”Settings”,将“Repository name”改为
- <code class="highlighter-rouge"><span class="p">{</span><span class="err">yourusername</span><span class="p">}</span><span class="err">.github.io</span></code>，点击“Rename”。</p>
-
-<p><img src="http://img.blog.csdn.net/20160326173955662" alt="" /></p>
-
-<p>完成之后便可以通过<code class="highlighter-rouge">http://{yourusername}.github.io</code>来访问你Fork的网站啦。</p>
-
-<p><strong>5.同步仓库</strong></p>
-
-<p>为了方便网站的调试和 Blog 的编辑，我们需要将托管在 GitHub 上的仓库同步到本地计算机上。
-再次打开Git Bash，输入以下命令切换到你想放置本地代码仓库的位置：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {本地路径}     // 比如：cd e:/workspace
-</code></pre>
-</div>
-
-<p>clone（克隆）你自己的 GitHub Pages 远程仓库：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/{username}/{username}.github.io.git     
-</code></pre>
-</div>
-
-<p>结果如下：</p>
-
-<p><img src="http://img.blog.csdn.net/20160326174041711" alt="" /></p>
-
-<p>这时所有远程仓库里的源码都拷贝到 <code class="highlighter-rouge">e:/workspace/{username}.github.io</code> 这个文件夹里来了。</p>
-
-<h3 id="section-3">正式使用</h3>
-
-<p>有了前面的准备，现在就可以正式的编辑网站和写 Blog 啦。</p>
-
-<p><strong>1.Jekyll简单使用</strong></p>
-
-<p>在终端中输入命令:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {local repository} // {local repository}替换成你的本地仓库的目录
-$ jekyll serve
-</code></pre>
-</div>
-
-<p>如果一切顺利，通过浏览器访问 http://localhost:4000/ 就已经可以看到自己的网站啦。</p>
-
-<p>注意</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ jekyll serve
-</code></pre>
-</div>
-
-<p>与</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ jekyll serve -watch
-</code></pre>
-</div>
-
-<p>功能相似，开启服务后都可以查看网站效果，也能检测到修改。个人感觉差别在于被动刷新和主动
-检测上。而Jekyll配置文件_config.yml的改动则需要重启服务才能生效。</p>
-
-<p>所有的 Blog 放在仓库的 <code class="highlighter-rouge">_POST</code> 文件夹下，命名遵循 <code class="highlighter-rouge">y-m-d-title.format</code> 的格式。</p>
-
-<p>对 Jekyll <a href="http://jekyll.bootcss.com/docs/usage/">基本用法</a>和
-<a href="http://jekyll.bootcss.com/docs/usage/">目录结构</a>的更多介绍，需要的时候可以自己查看。</p>
-
-<p><strong>2.使用 Git 更新 Blog</strong></p>
-
-<p>无论是修改网站还是更新 Blog ，都可以通过 Git 命令来完成。打开 Git Bash 切换地址到本地仓库：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {your repository}
-</code></pre>
-</div>
-
-<p>如果之前使用 Git 与其他远程仓库建立过连接，则需要断开旧的连接连接到我们的 GitHub Pages 仓库：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git remote rm origin
-$ git remote add origin https://github.com/{yourusername}/{yourusername}.github.io.git
-</code></pre>
-</div>
-
-<p>然后在 Bash 中输入一下命令将本地修改同步到GitHub上:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git add .
-$ git commit -m "statement"   //此处statement填写此次提交修改的内容，作为日后查阅
-$ git push origin master
-</code></pre>
-</div>
-<p>完成后就能在你的主页上看到更新了。</p>
-
-<h2 id="section-4">后记</h2>
-
-<p>接下来打算要做的有：</p>
-
-<ol>
-  <li>
-    <p>多写一些博客，不只是技术的，还有日常；</p>
-  </li>
-  <li>
-    <p>添加一个评论系统；</p>
-  </li>
-  <li>
-    <p>完善 Blog 的翻页支持；</p>
-  </li>
-  <li>
-    <p>添加搜索功能；</p>
-  </li>
-  <li>
-    <p>添加转发功能。</p>
-  </li>
-</ol>
+<p>其实就是在一个车牌识别的软件里加一个摄像头的功能，使其可以直接拍照识别，其中CarPlateDetection.ImageProc这个函数写在另外的文件里，是调用一些cpp文件实现的。</p>
 
 
                 <hr>
@@ -413,12 +440,19 @@ $ git push origin master
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2016/06/15/Blog-on-my-own-%E5%89%AF%E6%9C%AC/" data-toggle="tooltip" data-placement="top" title="Blog on my own">
+                        <a href="/2016/03/28/sitewhere/" data-toggle="tooltip" data-placement="top" title="Brief Introduction to Sitewhere">
                         Previous<br>
-                        <span>Blog on my own</span>
+                        <span>Brief Introduction to Sitewhere</span>
                         </a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/2016/06/15/Blog-on-my-own-%E5%89%AF%E6%9C%AC/" data-toggle="tooltip" data-placement="top" title="Blog on my own">
+                        Next<br>
+                        <span>Blog on my own</span>
+                        </a>
+                    </li>
                     
                 </ul>
 
