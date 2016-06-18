@@ -5,236 +5,29 @@
     <description>这里是 @Jerin 的个人博客，与你一起发现更大的世界。</description>
     <link>http://jerinw.github.io/</link>
     <atom:link href="http://jerinw.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 18 Jun 2016 12:32:45 +0800</pubDate>
-    <lastBuildDate>Sat, 18 Jun 2016 12:32:45 +0800</lastBuildDate>
+    <pubDate>Sat, 18 Jun 2016 23:24:34 +0800</pubDate>
+    <lastBuildDate>Sat, 18 Jun 2016 23:24:34 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
     
       <item>
-        <title>Blog on my own</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;前言&lt;/h1&gt;
+        <title>与汤筱晴的这些天</title>
+        <description>&lt;p&gt;今天你好像有点不开心，删了微博，屏蔽了朋友圈。我有点摸不着头脑，不知道是我惹的，还是考试惹的，或者其他。总之看你不开心，我就挺难过的。&lt;/p&gt;
 
-&lt;p&gt;如今我的小屋已经砌成，在此分享一下经验，正文中部分内容参考了网上其他教程。&lt;/p&gt;
+&lt;p&gt;下午想聊一些好玩的事让你多说说话，可是好像又惹你生气了，感觉自己蠢die……&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;#build&quot;&gt;跳过废话&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;送你回家以后就站在你家楼下思考了一下哪里做得不好，下次遇到这种情况该怎么办。想着想着你麻麻就下楼扔垃圾了，吓我一跳，急忙上前叫一声阿姨好。&lt;/p&gt;
 
-&lt;p&gt;说起来也是今年刚开始写的博客，打算记录一下自己最近做的事，或是记录学习工作上遇到的问题，如何解决的。开始选择了新浪博客，但用着用着发现了很多不喜欢的地方，比如布局背景不能随意更换，文章字体行距不能选择，代码不能高亮……作为一个工科生怎么能被这些束缚住手脚呢，那么就自己动手搭一个自己的博客吧，想怎么改就怎么改，想着反正实验室有好多世界各地的服务器，搞个域名也不难。一开始查资料有人推荐Wordpress，后来又了解了Jekyll,Hexo,最后确定用Jeckyll。&lt;/p&gt;
+&lt;p&gt;估计麻麻是以为我们吵架你不想理我，把我关在门外，就托一个邻居扔了垃圾，然后自己偷笑着跑上去了，好萌哈哈。&lt;/p&gt;
 
-&lt;p&gt;为什么选择用Jekyll，我是这么觉得的：&lt;/p&gt;
+&lt;p&gt;我知道你我都是要有自己的空间的，以后我还是先做好自己的事，少缠着你，不过陪你回家已经成了我一个不大不小的习惯，还是想跟你多呆一会的。&lt;/p&gt;
 
-&lt;p&gt;首先不是每个人都想去花钱买空间买域名的，Jekyll生成的网页可以托管在Github上。其次Jekyll简洁明了，Wordpress功能如此强大，以至于大家都是在不断折腾Wordpress本身，而不是专注于写博客。然后Jekyll技术门槛相对较低，Markdown写起来也比较顺手。其实它也有一定缺点，比如Jekyll生成的都是静态网页，如果要加评论的模块比较麻烦，其次它是不依托数据库的，也就是说每次运行都要遍历所有文本文件，要是网站做得越大，生成时间也就越长。但是瑕不掩瑜，而且Jekyll是Proudly hosted by Github的（微笑）总结来说，用Jekyll就是：免费，简洁，够用。&lt;/p&gt;
-
-&lt;p id=&quot;build&quot;&gt;&lt;/p&gt;
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;正文&lt;/h2&gt;
-
-&lt;p&gt;本博客使用&lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; + &lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;Jekyll&lt;/a&gt; + &lt;a href=&quot;https://pages.GitHub.com/&quot;&gt;GitHub Pages&lt;/a&gt; 的技术方案搭建。&lt;/p&gt;
-
-&lt;p&gt;其中 Jekyll 是一个博客形态的静态站点产生器，能够将.Markdown转换成可以发布的完整网站。使用 Jekyll 来进行本地网站的调试然后用Git进行 Blog 的发布。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; 是Github推出的展示自我和项目的网站。你的网站直接托管在自己的 GitHub 仓库上，默认使用GitHub的子域名，通过 Git 命令管理，不用自己捣腾主机，也没有流量和空间限制.是一个非常理想的展示的空间。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;本地准备&lt;/h3&gt;
-
-&lt;p&gt;接下来要介绍本地的准备，系统为Win7，文本编辑器用的Sublime text。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1.安装 &lt;a href=&quot;http://rubyinstaller.org/downloads/&quot;&gt;Ruby&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;注意64位和32位的区别，我装的是 Ruby 2.2.4(x64)&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;注意安装时一定要勾选添加到环境变量！&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/2016-06-15/1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.安装 &lt;a href=&quot;https://rubygems.org/pages/download&quot;&gt;RubyGems&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Windows下使用zip格式较为方便，将下载的文件解压到任意路径下。打开Windows的命令行窗口
-(Win8以后可以按win+x+a)，输入命令：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {你的解压地址}
-$ ruby setpu.rb
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;3.安装 Jekyll&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;在命令行输入：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ gem install jekyll
-$ gem install jekyll-paginate
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;4.配置 Git 环境&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;首先安装 &lt;a href=&quot;https://git-for-windows.GitHub.io/&quot;&gt;git for windows&lt;/a&gt;
-我装的是Git-2.9.0-64-bit。全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。&lt;/p&gt;
-
-&lt;h3 id=&quot;github&quot;&gt;GitHub准备&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;1.创建自己的 &lt;a href=&quot;https://GitHub.com/&quot;&gt;GitHub&lt;/a&gt; 账号&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.设置 git 账号&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;在本地打开安装好的 Git Bash。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326173741565&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;shell&lt;/code&gt;中执行以下命令，设置你的 git 用户名和邮箱：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global user.name &quot;{username}&quot;          // 用你的用户名替换{username}
-$ git config --global user.email &quot;{name@site.com}&quot;    // 用你的邮箱替换{name@site.com}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;3.配置SSH&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;为了和GitHub的远程仓库进行传输，需要配置SSH。在&lt;code class=&quot;highlighter-rouge&quot;&gt;shell&lt;/code&gt;中执行：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ssh-keygen -t rsa -C&quot;{name@site.com}&quot;    // 用你的邮箱替换{name@site.com}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;这样在&lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\username&lt;/code&gt;下会生成一个&lt;code class=&quot;highlighter-rouge&quot;&gt;.ssh&lt;/code&gt;文件夹。我的路径是在C:\Program Files\Java\jdk1.8.0_51.ssh，反正在命令行下有提示，如下图。
-&lt;img src=&quot;/img/2016-06-15/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;接下来使用浏览器登录你的GitHub账户，点击右上角的”Settings”&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/2016-06-15/3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;点击“SSH and GPG Keys”，&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/img/2016-06-15/4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;使用文本编辑器打开&lt;code class=&quot;highlighter-rouge&quot;&gt;.ssh&lt;/code&gt;中的&lt;code class=&quot;highlighter-rouge&quot;&gt;id_rsa.pub&lt;/code&gt;文件，将内容复制粘贴到Key中，
-点“Add SSH Key”确定。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326173829850&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;配置好SSH之后，便可以在本地使用 git 访问自己的 GitHub 远程仓库了。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4.创建自己的 GitHub Pages&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub 自动将命名规则为&lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;yourusername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.github.io&lt;/span&gt;&lt;/code&gt;的仓库识别为 GitHub Pages 项目。简单的
-建站方法是挑选一个自己喜欢的&lt;a href=&quot;https://github.com/jekyll/jekyll/wiki/sites&quot;&gt;模板&lt;/a&gt;, 将其Fork到
-自己的空间。例如：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326173933085&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;然后在你的主页点开之前Fork的仓库，点击”Settings”,将“Repository name”改为
- &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;yourusername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.github.io&lt;/span&gt;&lt;/code&gt;，点击“Rename”。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326173955662&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;完成之后便可以通过&lt;code class=&quot;highlighter-rouge&quot;&gt;http://{yourusername}.github.io&lt;/code&gt;来访问你Fork的网站啦。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;5.同步仓库&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;为了方便网站的调试和 Blog 的编辑，我们需要将托管在 GitHub 上的仓库同步到本地计算机上。
-再次打开Git Bash，输入以下命令切换到你想放置本地代码仓库的位置：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {本地路径}     // 比如：cd e:/workspace
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;clone（克隆）你自己的 GitHub Pages 远程仓库：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/{username}/{username}.github.io.git     
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;结果如下：&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326174041711&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这时所有远程仓库里的源码都拷贝到 &lt;code class=&quot;highlighter-rouge&quot;&gt;e:/workspace/{username}.github.io&lt;/code&gt; 这个文件夹里来了。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;正式使用&lt;/h3&gt;
-
-&lt;p&gt;有了前面的准备，现在就可以正式的编辑网站和写 Blog 啦。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1.Jekyll简单使用&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;在终端中输入命令:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {local repository} // {local repository}替换成你的本地仓库的目录
-$ jekyll serve
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;如果一切顺利，通过浏览器访问 http://localhost:4000/ 就已经可以看到自己的网站啦。&lt;/p&gt;
-
-&lt;p&gt;注意&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ jekyll serve
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;与&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ jekyll serve -watch
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;功能相似，开启服务后都可以查看网站效果，也能检测到修改。个人感觉差别在于被动刷新和主动
-检测上。而Jekyll配置文件_config.yml的改动则需要重启服务才能生效。&lt;/p&gt;
-
-&lt;p&gt;所有的 Blog 放在仓库的 &lt;code class=&quot;highlighter-rouge&quot;&gt;_POST&lt;/code&gt; 文件夹下，命名遵循 &lt;code class=&quot;highlighter-rouge&quot;&gt;y-m-d-title.format&lt;/code&gt; 的格式。&lt;/p&gt;
-
-&lt;p&gt;对 Jekyll &lt;a href=&quot;http://jekyll.bootcss.com/docs/usage/&quot;&gt;基本用法&lt;/a&gt;和
-&lt;a href=&quot;http://jekyll.bootcss.com/docs/usage/&quot;&gt;目录结构&lt;/a&gt;的更多介绍，需要的时候可以自己查看。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.使用 Git 更新 Blog&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;无论是修改网站还是更新 Blog ，都可以通过 Git 命令来完成。打开 Git Bash 切换地址到本地仓库：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {your repository}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;如果之前使用 Git 与其他远程仓库建立过连接，则需要断开旧的连接连接到我们的 GitHub Pages 仓库：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote rm origin
-$ git remote add origin https://github.com/{yourusername}/{yourusername}.github.io.git
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;然后在 Bash 中输入一下命令将本地修改同步到GitHub上:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add .
-$ git commit -m &quot;statement&quot;   //此处statement填写此次提交修改的内容，作为日后查阅
-$ git push origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;完成后就能在你的主页上看到更新了。&lt;/p&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;后记&lt;/h2&gt;
-
-&lt;p&gt;接下来打算要做的有：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;多写一些博客，不只是技术的，还有日常；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;添加一个评论系统；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;完善 Blog 的翻页支持；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;添加搜索功能；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;添加转发功能。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;总之呢我汤最好天天开心啦，生活总有烦闷，你想一个人的时候我尽量不打扰你，想吐槽的时候我也可以做你的树洞，嘻嘻爱你。&lt;/p&gt;
 </description>
-        <pubDate>Wed, 15 Jun 2016 22:00:00 +0800</pubDate>
-        <link>http://jerinw.github.io/2016/06/15/Blog-on-my-own/</link>
-        <guid isPermaLink="true">http://jerinw.github.io/2016/06/15/Blog-on-my-own/</guid>
+        <pubDate>Sat, 18 Jun 2016 07:49:00 +0800</pubDate>
+        <link>http://jerinw.github.io/2016/06/18/About-Tang/</link>
+        <guid isPermaLink="true">http://jerinw.github.io/2016/06/18/About-Tang/</guid>
         
-        <category>技术</category>
+        <category>Tang</category>
         
         
       </item>
@@ -461,8 +254,8 @@ $ git push origin master
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 15 Jun 2016 22:00:00 +0800</pubDate>
-        <link>http://jerinw.github.io/2016/06/15/Blog-on-my-own-%E5%89%AF%E6%9C%AC/</link>
-        <guid isPermaLink="true">http://jerinw.github.io/2016/06/15/Blog-on-my-own-%E5%89%AF%E6%9C%AC/</guid>
+        <link>http://jerinw.github.io/2016/06/15/Blog-on-my-own/</link>
+        <guid isPermaLink="true">http://jerinw.github.io/2016/06/15/Blog-on-my-own/</guid>
         
         <category>技术</category>
         
