@@ -2,7 +2,7 @@
 layout:     post
 title:      "小心思"
 subtitle:   "2016-06-20"
-date:       2016-06-19 21:28:00
+date:       2016-06-20 21:28:00
 author:     "Jerin"
 header-img: "img/tag-bg.jpg"
 catalog: true
