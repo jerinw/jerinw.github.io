@@ -1,18 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jerin&#39;s Blog</title>
+    <title>Jerin's Blog</title>
     <description>这里是 @Jerin 的个人博客，与你一起发现更大的世界。</description>
-    <link>http://jerinw.github.io/</link>
-    <atom:link href="http://jerinw.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 22 Jun 2016 14:46:16 +0800</pubDate>
-    <lastBuildDate>Wed, 22 Jun 2016 14:46:16 +0800</lastBuildDate>
-    <generator>Jekyll v3.1.6</generator>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 25 Jan 2017 14:30:20 +0800</pubDate>
+    <lastBuildDate>Wed, 25 Jan 2017 14:30:20 +0800</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
     
+      <item>
+        <title>有点甜</title>
+        <description>&lt;h2 id=&quot;正文&quot;&gt;正文&lt;/h2&gt;
 
+&lt;p&gt;一边听着这首歌，一边写写博客。&lt;/p&gt;
+
+&lt;embed src=&quot;http://music.163.com/#/m/song?id=165340&amp;amp;userid=51577350&quot; width=&quot;340&quot; height=&quot;86&quot; allownetworking=&quot;all&quot; /&gt;
+
+&lt;p&gt;在11月的小尾巴第一次见到我的小仙女，12月的第一天一起吃了好尴尬的一顿午餐，12月5的时候扯了她的衣角，，12月7一起回寝室。到那个很重要的12.8说是打羽毛球结果被我骗去看电影，想起来真的有点甜的。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017-01-24/2.gif&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;歌词&quot;&gt;歌词&lt;/h2&gt;
+
+&lt;p&gt;摘一颗苹果&lt;/p&gt;
+
+&lt;p&gt;等你从门前经过&lt;/p&gt;
+
+&lt;p&gt;送到你的手中帮你解渴&lt;/p&gt;
+
+&lt;p&gt;像夏天的可乐&lt;/p&gt;
+
+&lt;p&gt;像冬天的可可&lt;/p&gt;
+
+&lt;p&gt;你是对的时间对的角色&lt;/p&gt;
+
+&lt;p&gt;已经约定过&lt;/p&gt;
+
+&lt;p&gt;一起过下个周末&lt;/p&gt;
+
+&lt;p&gt;你的小小情绪对我来说&lt;/p&gt;
+
+&lt;p&gt;我也不知为何&lt;/p&gt;
+
+&lt;p&gt;伤口还没愈合&lt;/p&gt;
+
+&lt;p&gt;你就这样闯进我的心窝&lt;/p&gt;
+
+&lt;p&gt;是你让我看见干枯沙漠开出花一朵&lt;/p&gt;
+
+&lt;p&gt;是你让我想要每天为你写一首情歌&lt;/p&gt;
+
+&lt;p&gt;用最浪漫的副歌&lt;/p&gt;
+
+&lt;p&gt;你也轻轻地附和&lt;/p&gt;
+
+&lt;p&gt;眼神坚定着我们的选择&lt;/p&gt;
+
+&lt;p&gt;是你让我的世界从那刻变成粉红色&lt;/p&gt;
+
+&lt;p&gt;是你让我的生活从此都只要你配合&lt;/p&gt;
+
+&lt;p&gt;爱要精心来雕刻&lt;/p&gt;
+
+&lt;p&gt;我是米开朗基罗&lt;/p&gt;
+
+&lt;p&gt;用心刻画最幸福的风格&lt;/p&gt;
+
+&lt;p&gt;用时间 去思念 爱情有点甜&lt;/p&gt;
+
+&lt;p&gt;这心愿 不会变 爱情有点甜&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017-01-24/1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 25 Jan 2017 09:58:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/25/name/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/25/name/</guid>
+        
+        <category>日常</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>Back Home</title>
+        <description>&lt;p&gt;行李打包快递，我背着一个空荡荡的书包就回家了。天气特别好，没有云，这种阳光都暖暖的大晴天居然生出一点点萧索，可能因为放假学校里人少了的缘故。&lt;/p&gt;
+
+&lt;p&gt;小学到高中自不必说，大学也是在同省的杭州，读硕也是，所以只一小时不到的高铁，我就到家了。从来没有过奔波十几小时的体验，想着那些在回家路上辗转的同学们，我总会觉得在杭州读书是非常正确的选择。&lt;/p&gt;
+
+&lt;p&gt;实验室的师兄师弟回家都是十多个小时的火车，不禁心疼起他们来。其实以前我都不关注这种事，只是现在我的夏博早上七点多出学校，半夜十一点多才踏进家门，打车赶高铁乘地铁转大巴再打车，觉也睡不好还一直没吃饭，想想就难受得不行。&lt;/p&gt;
+
+&lt;p&gt;难受除了感叹夏博回家辛苦，还有意识到从今天开始一整个寒假都要跟她分开了。从在一起开始，我们都是天天见面一起吃饭一起回寝室，一下子见不到还是会感觉生活被抽掉了什么。&lt;/p&gt;
+
+&lt;p&gt;大概是太累了，夏博到家没多久就睡了，而我却矫情地想东想西睡不着。清醒的夜晚很可怕的，容易思考一些不必要的问题，放大各种担忧，不断贬低自己到越来越睡不着。&lt;/p&gt;
+
+&lt;p&gt;哎呀，才第一天就不要矫情了，所有的情绪都留着以后给想念吧。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/img/2017-01-22/1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 22 Jan 2017 08:48:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/22/back-home/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/22/back-home/</guid>
+        
+        <category>日常</category>
+        
+        
+      </item>
+    
       <item>
         <title>Blog on my own</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;前言&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
 
 &lt;p&gt;如今我的小屋已经砌成，在此分享一下经验，正文中部分内容参考了网上其他教程。&lt;/p&gt;
 
@@ -27,7 +125,7 @@
 &lt;p id=&quot;build&quot;&gt;&lt;/p&gt;
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;正文&lt;/h2&gt;
+&lt;h2 id=&quot;正文&quot;&gt;正文&lt;/h2&gt;
 
 &lt;p&gt;本博客使用&lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; + &lt;a href=&quot;http://jekyll.bootcss.com/&quot;&gt;Jekyll&lt;/a&gt; + &lt;a href=&quot;https://pages.GitHub.com/&quot;&gt;GitHub Pages&lt;/a&gt; 的技术方案搭建。&lt;/p&gt;
 
@@ -35,7 +133,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt; 是Github推出的展示自我和项目的网站。你的网站直接托管在自己的 GitHub 仓库上，默认使用GitHub的子域名，通过 Git 命令管理，不用自己捣腾主机，也没有流量和空间限制.是一个非常理想的展示的空间。&lt;/p&gt;
 
-&lt;h3 id=&quot;section-2&quot;&gt;本地准备&lt;/h3&gt;
+&lt;h3 id=&quot;本地准备&quot;&gt;本地准备&lt;/h3&gt;
 
 &lt;p&gt;接下来要介绍本地的准备，系统为Win7，文本编辑器用的Sublime text。&lt;/p&gt;
 
@@ -53,7 +151,7 @@
 (Win8以后可以按win+x+a)，输入命令：&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {你的解压地址}
-$ ruby setpu.rb
+$ ruby setup.rb
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -71,7 +169,7 @@ $ gem install jekyll-paginate
 &lt;p&gt;首先安装 &lt;a href=&quot;https://git-for-windows.GitHub.io/&quot;&gt;git for windows&lt;/a&gt;
 我装的是Git-2.9.0-64-bit。全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。&lt;/p&gt;
 
-&lt;h3 id=&quot;github&quot;&gt;GitHub准备&lt;/h3&gt;
+&lt;h3 id=&quot;github准备&quot;&gt;GitHub准备&lt;/h3&gt;
 
 &lt;p&gt;&lt;strong&gt;1.创建自己的 &lt;a href=&quot;https://GitHub.com/&quot;&gt;GitHub&lt;/a&gt; 账号&lt;/strong&gt;&lt;/p&gt;
 
@@ -105,7 +203,7 @@ $ git config --global user.email &quot;{name@site.com}&quot;    // 用你的邮�
 
 &lt;p&gt;点击“SSH and GPG Keys”，&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/img/2016-06-15/4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/2016-06-15/4.JPG&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;使用文本编辑器打开&lt;code class=&quot;highlighter-rouge&quot;&gt;.ssh&lt;/code&gt;中的&lt;code class=&quot;highlighter-rouge&quot;&gt;id_rsa.pub&lt;/code&gt;文件，将内容复制粘贴到Key中，
 点“Add SSH Key”确定。&lt;/p&gt;
@@ -122,94 +220,94 @@ $ git config --global user.email &quot;{name@site.com}&quot;    // 用你的邮�
 
 &lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326173933085&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;然后在你的主页点开之前Fork的仓库，点击”Settings”,将“Repository name”改为
- &lt;code class=&quot;highlighter-rouge&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;yourusername&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;.github.io&lt;/span&gt;&lt;/code&gt;，点击“Rename”。&lt;/p&gt;
+&lt;p&gt;然后在你的主页点开之前Fork的仓库，点击”Settings”,将“Repository name”改为&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-{yourusername}.github.io```，点击“Rename”。&quot;&gt;
+![](http://img.blog.csdn.net/20160326173955662)
 
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326173955662&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+完成之后便可以通过```http://{yourusername}.github.io```来访问你Fork的网站啦。
 
-&lt;p&gt;完成之后便可以通过&lt;code class=&quot;highlighter-rouge&quot;&gt;http://{yourusername}.github.io&lt;/code&gt;来访问你Fork的网站啦。&lt;/p&gt;
+**5.同步仓库**
 
-&lt;p&gt;&lt;strong&gt;5.同步仓库&lt;/strong&gt;&lt;/p&gt;
+为了方便网站的调试和 Blog 的编辑，我们需要将托管在 GitHub 上的仓库同步到本地计算机上。
+再次打开Git Bash，输入以下命令切换到你想放置本地代码仓库的位置：
 
-&lt;p&gt;为了方便网站的调试和 Blog 的编辑，我们需要将托管在 GitHub 上的仓库同步到本地计算机上。
-再次打开Git Bash，输入以下命令切换到你想放置本地代码仓库的位置：&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;$ cd {本地路径}     // 比如：cd e:/workspace&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+clone（克隆）你自己的 GitHub Pages 远程仓库：
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {本地路径}     // 比如：cd e:/workspace
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;$ git clone https://github.com/{username}/{username}.github.io.git&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+结果如下：
 
-&lt;p&gt;clone（克隆）你自己的 GitHub Pages 远程仓库：&lt;/p&gt;
+![](http://img.blog.csdn.net/20160326174041711)
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git clone https://github.com/{username}/{username}.github.io.git     
+这时所有远程仓库里的源码都拷贝到 ```e:/workspace/{username}.github.io``` 这个文件夹里来了。
+
+### 正式使用
+
+有了前面的准备，现在就可以正式的编辑网站和写 Blog 啦。
+
+**1.Jekyll简单使用**
+
+在终端中输入命令:
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;$ cd {local repository} // {local repository}替换成你的本地仓库的目录
+$ jekyll serve&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+如果一切顺利，通过浏览器访问 http://localhost:4000/ 就已经可以看到自己的网站啦。
 
-&lt;p&gt;结果如下：&lt;/p&gt;
+注意
 
-&lt;p&gt;&lt;img src=&quot;http://img.blog.csdn.net/20160326174041711&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;这时所有远程仓库里的源码都拷贝到 &lt;code class=&quot;highlighter-rouge&quot;&gt;e:/workspace/{username}.github.io&lt;/code&gt; 这个文件夹里来了。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;正式使用&lt;/h3&gt;
-
-&lt;p&gt;有了前面的准备，现在就可以正式的编辑网站和写 Blog 啦。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;1.Jekyll简单使用&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;在终端中输入命令:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {local repository} // {local repository}替换成你的本地仓库的目录
-$ jekyll serve
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;$ jekyll serve&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+与
 
-&lt;p&gt;如果一切顺利，通过浏览器访问 http://localhost:4000/ 就已经可以看到自己的网站啦。&lt;/p&gt;
-
-&lt;p&gt;注意&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ jekyll serve
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;$ jekyll serve -watch&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+功能相似，开启服务后都可以查看网站效果，也能检测到修改。个人感觉差别在于被动刷新和主动
+检测上。而Jekyll配置文件_config.yml的改动则需要重启服务才能生效。
 
-&lt;p&gt;与&lt;/p&gt;
+所有的 Blog 放在仓库的 ```_POST``` 文件夹下，命名遵循 ```y-m-d-title.format``` 的格式。
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ jekyll serve -watch
+对 Jekyll [基本用法](http://jekyll.bootcss.com/docs/usage/)和
+[目录结构](http://jekyll.bootcss.com/docs/usage/)的更多介绍，需要的时候可以自己查看。
+
+
+**2.使用 Git 更新 Blog**
+
+无论是修改网站还是更新 Blog ，都可以通过 Git 命令来完成。打开 Git Bash 切换地址到本地仓库：
+
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;$ cd {your repository}&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+如果之前使用 Git 与其他远程仓库建立过连接，则需要断开旧的连接连接到我们的 GitHub Pages 仓库：
 
-&lt;p&gt;功能相似，开启服务后都可以查看网站效果，也能检测到修改。个人感觉差别在于被动刷新和主动
-检测上。而Jekyll配置文件_config.yml的改动则需要重启服务才能生效。&lt;/p&gt;
-
-&lt;p&gt;所有的 Blog 放在仓库的 &lt;code class=&quot;highlighter-rouge&quot;&gt;_POST&lt;/code&gt; 文件夹下，命名遵循 &lt;code class=&quot;highlighter-rouge&quot;&gt;y-m-d-title.format&lt;/code&gt; 的格式。&lt;/p&gt;
-
-&lt;p&gt;对 Jekyll &lt;a href=&quot;http://jekyll.bootcss.com/docs/usage/&quot;&gt;基本用法&lt;/a&gt;和
-&lt;a href=&quot;http://jekyll.bootcss.com/docs/usage/&quot;&gt;目录结构&lt;/a&gt;的更多介绍，需要的时候可以自己查看。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.使用 Git 更新 Blog&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;无论是修改网站还是更新 Blog ，都可以通过 Git 命令来完成。打开 Git Bash 切换地址到本地仓库：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cd {your repository}
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;$ git remote rm origin
+$ git remote add origin https://github.com/{yourusername}/{yourusername}.github.io.git&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+然后在 Bash 中输入一下命令将本地修改同步到GitHub上:
 
-&lt;p&gt;如果之前使用 Git 与其他远程仓库建立过连接，则需要断开旧的连接连接到我们的 GitHub Pages 仓库：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git remote rm origin
-$ git remote add origin https://github.com/{yourusername}/{yourusername}.github.io.git
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
-
-&lt;p&gt;然后在 Bash 中输入一下命令将本地修改同步到GitHub上:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git add .
-$ git commit -m &quot;statement&quot;   //此处statement填写此次提交修改的内容，作为日后查阅
+&lt;p&gt;$ git add .
+$ git commit -m “statement”   //此处statement填写此次提交修改的内容，作为日后查阅
 $ git push origin master
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;p&gt;完成后就能在你的主页上看到更新了。&lt;/p&gt;
+```
+完成后就能在你的主页上看到更新了。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;后记&lt;/h2&gt;
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
 
 &lt;p&gt;接下来打算要做的有：&lt;/p&gt;
 
@@ -232,8 +330,8 @@ $ git push origin master
 &lt;/ol&gt;
 </description>
         <pubDate>Wed, 15 Jun 2016 22:00:00 +0800</pubDate>
-        <link>http://jerinw.github.io/2016/06/15/Blog-on-my-own/</link>
-        <guid isPermaLink="true">http://jerinw.github.io/2016/06/15/Blog-on-my-own/</guid>
+        <link>http://localhost:4000/2016/06/15/Blog-on-my-own/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/06/15/Blog-on-my-own/</guid>
         
         <category>技术</category>
         
@@ -242,7 +340,7 @@ $ git push origin master
     
       <item>
         <title>Android Camera</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;前言&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
 
 &lt;p&gt;最近在做安卓程序开发，一个车牌识别的项目，其实车牌识别已经挺成熟了，只是：&lt;/p&gt;
 
@@ -258,7 +356,7 @@ $ git push origin master
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;正文&lt;/h2&gt;
+&lt;h2 id=&quot;正文&quot;&gt;正文&lt;/h2&gt;
 
 &lt;p&gt;​### A.权限&lt;/p&gt;
 
@@ -270,7 +368,7 @@ $ git push origin master
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h3 id=&quot;b&quot;&gt;B.加入控件&lt;/h3&gt;
+&lt;h3 id=&quot;b加入控件&quot;&gt;B.加入控件&lt;/h3&gt;
 
 &lt;p&gt;layout的xml文件里加surfaceview，摄像头捕获的内容就显示在这个控件里。fill_parent表示控件有多大内容就有多大，比如这个activity里没有别的控件了，那这个摄像头捕获的图像就满屏幕，跟照相机一样，如果有别的控件，就填满除这个控件外剩下的空间。&lt;/p&gt;
 
@@ -283,7 +381,7 @@ $ git push origin master
 
 &lt;p&gt;&lt;img src=&quot;/img/2016-06-13/2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;c&quot;&gt;C.懒得写了，贴源码&lt;/h3&gt;
+&lt;h3 id=&quot;c懒得写了贴源码&quot;&gt;C.懒得写了，贴源码&lt;/h3&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;package com.example.carplate;
 
@@ -484,13 +582,13 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Ca
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;后记&lt;/h2&gt;
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
 
 &lt;p&gt;其实就是在一个车牌识别的软件里加一个摄像头的功能，使其可以直接拍照识别，其中CarPlateDetection.ImageProc这个函数写在另外的文件里，是调用一些cpp文件实现的。&lt;/p&gt;
 </description>
         <pubDate>Mon, 13 Jun 2016 23:02:00 +0800</pubDate>
-        <link>http://jerinw.github.io/2016/06/13/Android-camera/</link>
-        <guid isPermaLink="true">http://jerinw.github.io/2016/06/13/Android-camera/</guid>
+        <link>http://localhost:4000/2016/06/13/Android-camera/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/06/13/Android-camera/</guid>
         
         <category>技术</category>
         
@@ -499,7 +597,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Ca
     
       <item>
         <title>Brief Introduction to Sitewhere</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;前言&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;前言&quot;&gt;前言&lt;/h1&gt;
 
 &lt;p&gt;IOT(Internet OfThings)也就是我们常说的物联网，实际上就是用互联网实现各种设备间的通信，使得这些物品组成一个或大或小的网络。其目的是实现设备的统筹管理以更好地服务于人类，实现我们各种需求。可以认为是互联网的对象从人到物的一个转换。&lt;/p&gt;
 
@@ -507,7 +605,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Ca
 
 &lt;hr /&gt;
 
-&lt;h2 id=&quot;section-1&quot;&gt;物联网服务器平台​&lt;/h2&gt;
+&lt;h2 id=&quot;物联网服务器平台&quot;&gt;物联网服务器平台​&lt;/h2&gt;
 
 &lt;p&gt;1.作为类似一个处理设备数据的控制器的应用。服务器可以装在本地机器上，也可以跑在云端，每天可以处理炒鸡炒鸡多的事件。&lt;/p&gt;
 
@@ -519,7 +617,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Ca
 
 &lt;p&gt;5.提供了一个HTML5 ​管理应用，使得系统的数据可以一种更好理解的方式来查看和操作。管理的app和第三方app都可以通过REST接口与sitewhere进行交互。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-2&quot;&gt;设备管理​&lt;/h2&gt;
+&lt;h2 id=&quot;设备管理&quot;&gt;设备管理​&lt;/h2&gt;
 
 &lt;p&gt;1.提供了一套完整的设备管理模型。&lt;/p&gt;
 
@@ -527,7 +625,7 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Ca
 
 &lt;p&gt;3.把设备和外部事物或者人联系起来​，比如一个校徽，就跟戴校徽的我联系起来，这样方便追踪事件。A车就跟A车车牌联系起来，发现这个车牌，就知道这辆车进去或者出去了。&lt;/p&gt;
 
-&lt;h2 id=&quot;section-3&quot;&gt;集成&lt;/h2&gt;
+&lt;h2 id=&quot;集成&quot;&gt;集成&lt;/h2&gt;
 
 &lt;p&gt;1.集成了第三方的工作框架，如​ MuleAnyPoint，Salesforce，Twilio。&lt;/p&gt;
 
@@ -539,13 +637,13 @@ public class MainActivity extends Activity implements SurfaceHolder.Callback, Ca
 
 &lt;p&gt;即，REST是一个框架，这个框架的实现就是RESTful。​&lt;/p&gt;
 
-&lt;h2 id=&quot;section-4&quot;&gt;后记&lt;/h2&gt;
+&lt;h2 id=&quot;后记&quot;&gt;后记&lt;/h2&gt;
 
 &lt;p&gt;文章都是老博客搬过来的。本来打算一边学习Sitewhere，一边更新，就当学习笔记的。后来手头事情比较多，Sitewhere端做得比较少，也不怎么看了。&lt;/p&gt;
 </description>
         <pubDate>Mon, 28 Mar 2016 18:42:00 +0800</pubDate>
-        <link>http://jerinw.github.io/2016/03/28/sitewhere/</link>
-        <guid isPermaLink="true">http://jerinw.github.io/2016/03/28/sitewhere/</guid>
+        <link>http://localhost:4000/2016/03/28/sitewhere/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/03/28/sitewhere/</guid>
         
         <category>技术</category>
         

@@ -12,7 +12,7 @@
 
     <title>Blog on my own - 感月月的博客 | Jerin's Blog</title>
 
-    <link rel="canonical" href="http://jerinw.github.io/2016/06/15/Blog-on-my-own/">
+    <link rel="canonical" href="http://localhost:4000/2016/06/15/Blog-on-my-own/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -185,7 +185,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-				<h1 id="section">前言</h1>
+				<h1 id="前言">前言</h1>
 
 <p>如今我的小屋已经砌成，在此分享一下经验，正文中部分内容参考了网上其他教程。</p>
 
@@ -200,7 +200,7 @@
 <p id="build"></p>
 <hr />
 
-<h2 id="section-1">正文</h2>
+<h2 id="正文">正文</h2>
 
 <p>本博客使用<a href="http://daringfireball.net/projects/markdown/">Markdown</a> + <a href="http://jekyll.bootcss.com/">Jekyll</a> + <a href="https://pages.GitHub.com/">GitHub Pages</a> 的技术方案搭建。</p>
 
@@ -208,7 +208,7 @@
 
 <p><a href="https://pages.github.com/">GitHub Pages</a> 是Github推出的展示自我和项目的网站。你的网站直接托管在自己的 GitHub 仓库上，默认使用GitHub的子域名，通过 Git 命令管理，不用自己捣腾主机，也没有流量和空间限制.是一个非常理想的展示的空间。</p>
 
-<h3 id="section-2">本地准备</h3>
+<h3 id="本地准备">本地准备</h3>
 
 <p>接下来要介绍本地的准备，系统为Win7，文本编辑器用的Sublime text。</p>
 
@@ -226,7 +226,7 @@
 (Win8以后可以按win+x+a)，输入命令：</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>$ cd {你的解压地址}
-$ ruby setpu.rb
+$ ruby setup.rb
 </code></pre>
 </div>
 
@@ -244,7 +244,7 @@ $ gem install jekyll-paginate
 <p>首先安装 <a href="https://git-for-windows.GitHub.io/">git for windows</a>
 我装的是Git-2.9.0-64-bit。全部默认即可,完成以后，后续配置需要用到GitHub账号，在后文中介绍。</p>
 
-<h3 id="github">GitHub准备</h3>
+<h3 id="github准备">GitHub准备</h3>
 
 <p><strong>1.创建自己的 <a href="https://GitHub.com/">GitHub</a> 账号</strong></p>
 
@@ -278,7 +278,7 @@ $ git config --global user.email "{name@site.com}"    // 用你的邮箱替换{n
 
 <p>点击“SSH and GPG Keys”，</p>
 
-<p><img src="/img/2016-06-15/4.jpg" alt="" /></p>
+<p><img src="/img/2016-06-15/4.JPG" alt="" /></p>
 
 <p>使用文本编辑器打开<code class="highlighter-rouge">.ssh</code>中的<code class="highlighter-rouge">id_rsa.pub</code>文件，将内容复制粘贴到Key中，
 点“Add SSH Key”确定。</p>
@@ -295,94 +295,94 @@ $ git config --global user.email "{name@site.com}"    // 用你的邮箱替换{n
 
 <p><img src="http://img.blog.csdn.net/20160326173933085" alt="" /></p>
 
-<p>然后在你的主页点开之前Fork的仓库，点击”Settings”,将“Repository name”改为
- <code class="highlighter-rouge"><span class="p">{</span><span class="err">yourusername</span><span class="p">}</span><span class="err">.github.io</span></code>，点击“Rename”。</p>
+<p>然后在你的主页点开之前Fork的仓库，点击”Settings”,将“Repository name”改为</p>
+<pre><code class="language-{yourusername}.github.io```，点击“Rename”。">
+![](http://img.blog.csdn.net/20160326173955662)
 
-<p><img src="http://img.blog.csdn.net/20160326173955662" alt="" /></p>
+完成之后便可以通过```http://{yourusername}.github.io```来访问你Fork的网站啦。
 
-<p>完成之后便可以通过<code class="highlighter-rouge">http://{yourusername}.github.io</code>来访问你Fork的网站啦。</p>
+**5.同步仓库**
 
-<p><strong>5.同步仓库</strong></p>
+为了方便网站的调试和 Blog 的编辑，我们需要将托管在 GitHub 上的仓库同步到本地计算机上。
+再次打开Git Bash，输入以下命令切换到你想放置本地代码仓库的位置：
 
-<p>为了方便网站的调试和 Blog 的编辑，我们需要将托管在 GitHub 上的仓库同步到本地计算机上。
-再次打开Git Bash，输入以下命令切换到你想放置本地代码仓库的位置：</p>
+</code></pre>
+<p>$ cd {本地路径}     // 比如：cd e:/workspace</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+clone（克隆）你自己的 GitHub Pages 远程仓库：
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {本地路径}     // 比如：cd e:/workspace
 </code></pre>
 </div>
+<p>$ git clone https://github.com/{username}/{username}.github.io.git</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+结果如下：
 
-<p>clone（克隆）你自己的 GitHub Pages 远程仓库：</p>
+![](http://img.blog.csdn.net/20160326174041711)
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git clone https://github.com/{username}/{username}.github.io.git     
+这时所有远程仓库里的源码都拷贝到 ```e:/workspace/{username}.github.io``` 这个文件夹里来了。
+
+### 正式使用
+
+有了前面的准备，现在就可以正式的编辑网站和写 Blog 啦。
+
+**1.Jekyll简单使用**
+
+在终端中输入命令:
+
 </code></pre>
 </div>
+<p>$ cd {local repository} // {local repository}替换成你的本地仓库的目录
+$ jekyll serve</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+如果一切顺利，通过浏览器访问 http://localhost:4000/ 就已经可以看到自己的网站啦。
 
-<p>结果如下：</p>
+注意
 
-<p><img src="http://img.blog.csdn.net/20160326174041711" alt="" /></p>
-
-<p>这时所有远程仓库里的源码都拷贝到 <code class="highlighter-rouge">e:/workspace/{username}.github.io</code> 这个文件夹里来了。</p>
-
-<h3 id="section-3">正式使用</h3>
-
-<p>有了前面的准备，现在就可以正式的编辑网站和写 Blog 啦。</p>
-
-<p><strong>1.Jekyll简单使用</strong></p>
-
-<p>在终端中输入命令:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {local repository} // {local repository}替换成你的本地仓库的目录
-$ jekyll serve
 </code></pre>
 </div>
+<p>$ jekyll serve</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+与
 
-<p>如果一切顺利，通过浏览器访问 http://localhost:4000/ 就已经可以看到自己的网站啦。</p>
-
-<p>注意</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ jekyll serve
 </code></pre>
 </div>
+<p>$ jekyll serve -watch</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+功能相似，开启服务后都可以查看网站效果，也能检测到修改。个人感觉差别在于被动刷新和主动
+检测上。而Jekyll配置文件_config.yml的改动则需要重启服务才能生效。
 
-<p>与</p>
+所有的 Blog 放在仓库的 ```_POST``` 文件夹下，命名遵循 ```y-m-d-title.format``` 的格式。
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ jekyll serve -watch
+对 Jekyll [基本用法](http://jekyll.bootcss.com/docs/usage/)和
+[目录结构](http://jekyll.bootcss.com/docs/usage/)的更多介绍，需要的时候可以自己查看。
+
+
+**2.使用 Git 更新 Blog**
+
+无论是修改网站还是更新 Blog ，都可以通过 Git 命令来完成。打开 Git Bash 切换地址到本地仓库：
+
 </code></pre>
 </div>
+<p>$ cd {your repository}</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+如果之前使用 Git 与其他远程仓库建立过连接，则需要断开旧的连接连接到我们的 GitHub Pages 仓库：
 
-<p>功能相似，开启服务后都可以查看网站效果，也能检测到修改。个人感觉差别在于被动刷新和主动
-检测上。而Jekyll配置文件_config.yml的改动则需要重启服务才能生效。</p>
-
-<p>所有的 Blog 放在仓库的 <code class="highlighter-rouge">_POST</code> 文件夹下，命名遵循 <code class="highlighter-rouge">y-m-d-title.format</code> 的格式。</p>
-
-<p>对 Jekyll <a href="http://jekyll.bootcss.com/docs/usage/">基本用法</a>和
-<a href="http://jekyll.bootcss.com/docs/usage/">目录结构</a>的更多介绍，需要的时候可以自己查看。</p>
-
-<p><strong>2.使用 Git 更新 Blog</strong></p>
-
-<p>无论是修改网站还是更新 Blog ，都可以通过 Git 命令来完成。打开 Git Bash 切换地址到本地仓库：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ cd {your repository}
 </code></pre>
 </div>
+<p>$ git remote rm origin
+$ git remote add origin https://github.com/{yourusername}/{yourusername}.github.io.git</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>
+然后在 Bash 中输入一下命令将本地修改同步到GitHub上:
 
-<p>如果之前使用 Git 与其他远程仓库建立过连接，则需要断开旧的连接连接到我们的 GitHub Pages 仓库：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git remote rm origin
-$ git remote add origin https://github.com/{yourusername}/{yourusername}.github.io.git
 </code></pre>
 </div>
-
-<p>然后在 Bash 中输入一下命令将本地修改同步到GitHub上:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git add .
-$ git commit -m "statement"   //此处statement填写此次提交修改的内容，作为日后查阅
+<p>$ git add .
+$ git commit -m “statement”   //此处statement填写此次提交修改的内容，作为日后查阅
 $ git push origin master
-</code></pre>
-</div>
-<p>完成后就能在你的主页上看到更新了。</p>
+```
+完成后就能在你的主页上看到更新了。</p>
 
-<h2 id="section-4">后记</h2>
+<h2 id="后记">后记</h2>
 
 <p>接下来打算要做的有：</p>
 
@@ -421,9 +421,9 @@ $ git push origin master
                     
                     
                     <li class="next">
-                        <a href="/2016/06/19/About-Tang/" data-toggle="tooltip" data-placement="top" title="与汤筱晴的这些天">
+                        <a href="/2017/01/22/back-home/" data-toggle="tooltip" data-placement="top" title="Back Home">
                         Next<br>
-                        <span>与汤筱晴的这些天</span>
+                        <span>Back Home</span>
                         </a>
                     </li>
                     
@@ -473,8 +473,8 @@ $ git push origin master
                             
         				
                             
-                				<a href="/tags/#Tang" title="Tang" rel="3">
-                                    Tang
+                				<a href="/tags/#日常" title="日常" rel="2">
+                                    日常
                                 </a>
                             
         				
@@ -560,7 +560,7 @@ $ git push origin master
                     
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Jerin's Blog 2016
+                    Copyright &copy; Jerin's Blog 2017
                     <br>
                     Theme by Hux
                 </p>
