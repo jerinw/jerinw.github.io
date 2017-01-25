@@ -1,0 +1,15 @@
+---
+layout:     post
+title:      "君の名は？"
+subtitle:   "我的名字"
+date:       2017-01-25 14:50:00
+author:     "Jerin"
+header-img: "img/tag-bg.jpg"
+catalog: true
+tags:
+    - 日常
+---
+
+
+![](/img/2017-01-25/2.jpg)
+
