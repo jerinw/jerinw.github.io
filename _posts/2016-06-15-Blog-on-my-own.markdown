@@ -107,7 +107,7 @@ $ ssh-keygen -t rsa -C"{name@site.com}"    // 用你的邮箱替换{name@site.co
 
 点击“SSH and GPG Keys”，
 
-![](/img/2016-06-15/4.jpg)
+![](/img/2016-06-15/4.JPG)
 
 使用文本编辑器打开```.ssh```中的```id_rsa.pub```文件，将内容复制粘贴到Key中，
 点“Add SSH Key”确定。
